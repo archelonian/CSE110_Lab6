@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lab 3 &middot; CSE 110 Software Engineering
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/~cs110x/public/css/poole.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/syntax.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/~cs110x/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/~cs110x/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Course Website for CSE110, Winter Quarter 2017</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/~cs110x/">Home</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/labs/">Labs</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/lectures_a00/">Lecture Notes</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/logistics_a00/">Logistics</a>
+    <a class="sidebar-nav-item active" href="/~cs110x/static/professionalism/">Professionalism</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/resources/">Resources</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/syllabus/">Syllabus</a>
+    <!-- <a class="sidebar-nav-item" href="">Weekly TODO</a> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://ieng6.ucsd.edu/~cs110x/" title="Home">CSE 110 Software Engineering</a>
+            <small>Inc.</small>
+          </h3>
+        </div>
+      </div>
+
+
+      <div class="container content" id='instructions'>
+        <h1 id="the-parse-database">Pre-Lab 3:Downloading and Installing Intallij and Android Studio</h1>
+        <hr/>
+
+<h2 id="intellij-lab">Installing Java JDK, SDK and IntelliJ:</h2>
+<ul><li><p>Note that it is recommended to perform the following tasks in Ubuntu VM. Also you need to 
+    reserve the lab hours for group of two as you will be doing the most of the remaining labs in pair. 
+    Ensure that both parties are signed up for the same lab time.</p>
+    </li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+  <li>Each pair of students needs a personal laptop.</li>
+  <li>
+    Open up the VM that you prevsiously created.
+  </li>
+  <li>
+    Open a Terminal window.
+  </li>
+  <li><p>Type the following command to ensure you are located at the home directory:</p>
+      <ul>
+  <li>cd~/</li>
+      </ul>
+  </li>
+   <li><p> Type the following to update the package index:</p>
+    <ul>
+      <li><code>sudo apt-get update</code>
+      </li>
+    </ul>
+    <img src="/~cs110x/static/img/lab4/get_update.png" alt="image1" />      
+   </li>
+   <li><p> Now check if Java has been installed by typing the following command: </p>
+    <ul>
+      <li><code>java -version</code>
+      </li>
+    </ul>
+    <img src="/~cs110x/static/img/lab4/java-vers-no.png" alt="image2" />      
+   </li>
+   <li><p> If no Java version is found, install the JRE (Java Runtime Environment) by typing the following command: </p>
+    <ul>
+      <li><code>sudo apt-get install default-jre</code>
+     <ul type="circle">
+             <li>Type "yes" at the prompt.</li>
+     </ul>
+      </li>
+      
+    </ul>
+    <img src="/~cs110x/static/img/lab4/install-JRE.png" alt="image3" />      
+   </li>
+   <li><p>Now install the JDK(Java Development Kit) by typing the following command: </p>
+    <ul>
+      <li>
+         <code>sudo apt-get install default-jdk</code>
+     <ul type="circle">
+             <li>Type "yes" at the prompt.</li>
+     </ul>
+      </li>
+      
+    </ul>
+    <img src="/~cs110x/static/img/lab4/install-JDK.png" alt="image4" />      
+   </li>
+   <li><p>Now check to insure that java is installed by typing the following command:</p>
+    <ul>
+      <li><code>java -version</code>
+      </li>
+      
+    </ul>
+    <img src="/~cs110x/static/img/lab4/java-vers-yes.png" alt="image5" />      
+   </li>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="install-intellij">Install IntelliJ</h2>
+
+<ul>
+  <li>Visit the link below to  get a student account for IntelliJ:</li>
+    <ul><li><a href="https://www.jetbrains.com/student/">Jetbrains Student</a></li>
+  </ul>
+  <li>Click <b>Apply Now</b> and then fill in the information using unique ucsd email address like you used for lab1.</li>
+<img src="/~cs110x/static/img/lab4/applynow.png" alt="image1" /></li>
+<hr size="5"color="black">
+  <li>Check UCSD email account for the following email:<br />
+<img src="/~cs110x/static/img/lab4/emailconf.png" alt="image1" /></li>
+<hr size="5"color="black">
+  <li>Follow the prompts to create an account and then download IntelliJ.<br />
+<img src="/~cs110x/static/img/lab4/license.png" alt="image2" /></li>
+<hr size="5"color="black">
+  <li>Different versions exist for Windows, macOS and Linux. Download the Ultimate Version appropriate for the machine that is being downloaded for.<br />
+<img src="/~cs110x/static/img/lab4/download.png" alt="image3" /></li>
+<hr size="5"color="black">
+  <li>
+<img src="/~cs110x/static/img/lab4/thankyou.png" alt="image4" /></li>
+<hr size="5"color="black">
+  <li>Save the file to your download folder.<br />
+<img src="/~cs110x/static/img/lab4/save.png" alt="image5" /></li>
+<hr size="5"color="black">
+  <li>Create a file in your home directory:<br />
+    <pre><code>
+    cd ~/
+    mkdir IntelliJ
+    cd IntelliJ
+    </code></pre>
+  <li>Copy the IntelliJ.tar.gz to IntelliJ directory. Note that the actual filename may be different than the command listed below:</br>
+    <pre><code>
+    cp ~/Downloads/ideaIU-2016.1.1.tar.gz .
+    ls 
+    tar xfz ideaIU-2016.1.1.tar.gz
+    cd idea-IU-143.2287.1/
+    cd bin/
+    ./idea.sh
+    </code></pre>
+  </li>
+<img src="/~cs110x/static/img/lab4/ls.png" alt="image_new1" /></li>
+<hr size="5"color="black">
+  <li>Do not import any settings at the first prompt, you will now have to complete a set of default configurations for IntelliJ but these can be changed at a later time.</li> 
+<img src="/~cs110x/static/img/lab4/complete.png" alt="image6" /></li>
+<hr size="5"color="black">
+  <li>Enter the user name and password you created with the IntelliJ student account:<br />
+<img src="/~cs110x/static/img/lab4/activate.png" alt="image7" /></li>
+  <li>Select a UI theme and click <strong>Next: Default Plugins</strong>.<br />
+<img src="/~cs110x/static/img/lab6/image8.png" alt="image8" /></li>
+  <li>Leave all plugins to their default settings and click <strong>Next: Featured Plugins</strong>.<br />
+<img src="/~cs110x/static/img/lab6/image9.png" alt="image9" /></li>
+  <li>At featured plugins page if you would like IntelliJ to have movement capabilities like Vim, install the <strong>IdeaVIM</strong> plugin.</li>
+  <li>Then click <strong>Start using IntelliJ IDEA</strong>.<br />
+<img src="/~cs110x/static/img/lab6/image10.png" alt="image10" /></li>
+</ul>
+
+<hr />
+
+<h2 id="installing-the-java-sdk">Installing the Java SDK</h2>
+<ul>
+  <li>Next you will need to download the Java SDK for your operating system:</li>
+  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SDK</a><br />
+<img src="/~cs110x/static/img/lab6/image11.png" alt="image11" /></li>
+  <li>Take note of where the file is being saved.<br />
+<img src="/~cs110x/static/img/lab6/image12.png" alt="image12" /></li>
+  <li>Now open up the IntelliJ IDE again and Click Create New Project.<br />
+<img src="/~cs110x/static/img/lab4/intellij.png" alt="image13" /></li>
+  <li>On the New Project under Project SDK click <strong>New</strong>. </li>
+  <li>Then find where the Java SDK is installed on your machine and select the jdk file and click <strong>OK</strong> and then click <strong>Next</strong> .<br />
+<img src="/~cs110x/static/img/lab4/findJDK.png" alt="image14" /></li>
+  <li>On the next screen select <strong>Create project from template</strong>.</li>
+  <li>Then select <strong>Java Hello World</strong> template option.<br />
+<img src="/~cs110x/static/img/lab4/simple.png" alt="image15" /></li>
+  <li>Name the Project HelloWorld and click <strong>Next</strong>.</li>
+  <li>Now  you should see the page presented in the image below.</li>
+  <li>Right click canvas inside the project and select <strong>Run Main</strong>.</li>
+  <li>You should see the text "Hello World" display in a rectangular box below the code.<br />
+<img src="/~cs110x/static/img/lab4/HelloWorld.png" alt="image16" /></li>
+  <li>Now you are ready to create Java Programs in IntelliJ and ready for the lab.</li>
+  <li>You are done with Intellij section of the pre-lab. Next you will be downloading 
+  and setting up the Android Studio</li>
+</ul>
+
+<hr/>
+<h1 id="Depend">Android Studio</h1>
+<ul>
+      <li>Android Studio is available for Mac, Windows, and Linux.</li>
+      <li>Reminder that the amount of memory for the VM can be changed</li>
+      <li>If using Mac or Windows then may encounter some errors or issues that have not been
+	  covered here.</li>
+      <li>The majority of the lab has been written using Ubuntu.</li> 
+     <li>You may want to use your own machine if:
+        <ul>
+          <li>Your VM has been alloacted less than 3GB of RAM.</li>
+          <li>Your VM has been allocated less than 25GB of memory.</li> 
+        </ul>
+</ul>
+<hr />
+
+<h2 id="dependcies">Downloading and intsalling Android Studio</h2>
+	<li>Android Studio is an IDE for Android. Developed from IntelliJ specifically for use in creating 
+	    android applications. The navigation and basic functionalities will be very familiar to you from the IntelliJ lab.</li>
+	<li>To prepare your system for Android Studio you first need to download a few missing libraries.
+		<ul><li>Copy the line below into your terminal.</br>
+			<code> sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0 lib32stdc++6</code>
+			<img src="/~cs110x/static/img/newLab3/image1.png" alt="image1" /></li>
+		    <li>Click Yes at the prompt, once installed your system will be ready for android.</li>
+		</ul>
+	<li>Download Android Studio by visiting the link below. Ensure that you download the Andriod Studio
+	    package appropriate to your machine. Download the Android 1.5.1 since that is the version that
+	    will be used in this lab.
+	    <a href="http://tools.android.com/download/studio/builds/1-5-1" target="_blank">Downlaod the Android Studio.</a>.
+	    <img src="/~cs110x/static/img/newLab3/image1.1.png" alt="image2" />
+	<li>Once the pop-up window is displayed agree to terms and conditions. Save the file in a directory of your choosing
+	    <img src="/~cs110x/static/img/newLab3/image1.2.png" alt="image3" /></li> 
+	<li>Unzip the file in a folder that you would like to be installed on your machine. If you are using Windows
+	    simply open the executable and follow the installation prompts.
+	    <img src="/~cs110x/static/img/newLab3/image1.4.png" alt="image4" />
+	<li>Navigate to where the file was extracted and navigate to the bin folder <strong>~/android-studio/bin</strong>.
+	    Open Android Studio by typing the line below.</br>
+	    <code>./studio.sh</code>
+		<img src="/~cs110x/static/img/newLab3/image1.5.png" alt="image5" /></li>
+	<li>Now you will prompted to setup Android Studio.
+		<ul><li>
+			When prompted to import settings, choose <strong>I do not have a previous version of Android Studio...</strong>.
+			<img src="/~cs110x/static/img/newLab3/image1.7.png" alt="image5" />
+		   </li>
+		   <li>Next will be the setup wizard. Click Next.
+			<img src="/~cs110x/static/img/newLab3/image1.8.png" alt="image6" />
+		   </li>
+		   <li>Choose <strong>Standard</strong> on the next screen and click<strong> Next</strong>
+			<img src="/~cs110x/static/img/newLab3/image1.9.png" alt="image8" />
+		   <li>For the next page click <strong>Next</strong>.<img src="/~cs110x/static/img/newLab3/image1.10.png" alt="image11" /></li>
+		   <li>You may see something like below on this screen if you have OS which supports use of a Kernel-based Virtual 
+		       Machine (KVM). KVM will essentially use a Linux kernel to implement a hypervisor which can increase performance
+		       of 5-10x when running the Android emulator but your ability to use depends a lot on the underlying architecture 
+		       of your computer. If you are interested in using KVM click <strong>Finish</strong> on the next screen to download
+		       SDK files. For more information visit the link below.
+		       <a href="https://software.intel.com/en-us/android/articles/speeding-up-the-android- emulator-on-intel-architecture" 
+		       target="_blank">https://software.intel.com/en-us/android/articles/speeding-up-the-android- emulator-on-intel-architecture</a>.
+		       <img src="/~cs110x/static/img/newLab3/image1.11.png" alt="image11" /></li>
+		   <li>Wait for the files to download and if you get the the following message you need to go back and and install the missing
+		       dependencies.<img src="/~cs110x/static/img/newLab3/image1.13.png" alt="image9" /></li>
+		   <li>When the installation is complete you should see the screen below.
+		       <img src="/~cs110x/static/img/newLab3/image1.14.png" alt="image10" /></li>
+		</ul>
+  </li>
+</ul>
+
+<ul>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script type="text/javascript" src="/~cs110x//static/js/script.js"></script>
+  </body>
+</html>
+ûˆèþ¼      XˆiÕXˆiÖ=]Æ5XˆŒå   ;    :http://ieng6.ucsd.edu/~cs110x/static/labs/lab3/index2.html necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Wed, 25 Jan 2017 09:03:20 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 24 Jan 2017 08:07:16 GMT
+Etag: "76987d7-37fa-9ab23500"
+Accept-Ranges: bytes
+Content-Length: 14330
+Content-Type: text/html
+ original-response-headers Date: Wed, 25 Jan 2017 09:03:20 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 24 Jan 2017 08:07:16 GMT
+Etag: "76987d7-37fa-9ab23500"
+Accept-Ranges: bytes
+Content-Length: 14330
+Connection: close
+Content-Type: text/html
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 40 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/poole.css 1,1,1485334997,4096 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/syntax.css 1,1,1485334997,4096 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/lanyon.css 1,1,1485334997,4096 predictor::http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400 1,1,1485334997,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/get_update.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/java-vers-no.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/install-JRE.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/install-JDK.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/java-vers-yes.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/applynow.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/emailconf.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/license.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/download.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/thankyou.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/save.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/ls.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/complete.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/activate.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/image8.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/image9.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/image10.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/image11.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/image12.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/intellij.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/findJDK.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/simple.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab4/HelloWorld.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.1.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.2.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.4.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.5.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.7.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.8.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.9.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.10.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.11.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.13.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.14.png 1,1,1485334997,4097 predictor::http://ieng6.ucsd.edu/~cs110x//static/js/script.js 1,1,1485334997,4097   7ú

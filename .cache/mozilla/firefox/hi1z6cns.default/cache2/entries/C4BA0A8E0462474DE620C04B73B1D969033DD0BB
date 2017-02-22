@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      CSE 110 Software Engineering &middot; Inc.
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/~cs110x/public/css/poole.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/syntax.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/~cs110x/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/~cs110x/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Course Website for CSE110, Winter Quarter 2017</p>
+  </div>
+
+<!-- Navbar -->
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item active" href="/~cs110x/">Home</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/labs/">Labs</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/lectures_a00/">Lecture Notes</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/logistics_a00/">Logistics</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/professionalism/">Professionalism</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/resources/">Resources</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/syllabus/">Syllabus</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://ieng6.ucsd.edu/~cs110x/" title="Home">CSE 110 Software Engineering</a>
+            <small>Inc.</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="">
+        CSE110
+      </a>
+    </h1>
+
+    <span class="post-date">9 Jan 2017</span>
+
+    <p><em>The Course Website</em></p>
+
+<hr />
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Founders</th>
+      <th style="text-align: left"><a style="text-align: left" href="&#109;&#097;&#105;&#108;&#116;&#111;:&#103;&#105;&#108;&#108;&#101;&#115;&#112;&#105;&#101;&#064;&#117;&#099;&#115;&#100;&#046;&#101;&#100;&#117;">Gary Gillespie</a>, <em>CEO</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Executives</strong></td>
+      <td><a href="&#109;&#097;&#105;&#108;&#116;&#111;:skarimik@ucsd.edu">Soheil Karimi</a>, <em>COO</em></td>
+      
+    </tr>
+     <tr>
+      <td style="text-align: left"> </td>
+      <td><a href="&#109;&#097;&#105;&#108;&#116;&#111;:angie@ucsd.edu">Angie Nguyen</a>, <em>CIO</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td><a href="&#109;&#097;&#105;&#108;&#116;&#111;:allen.encoders@gmail.com">Allen Ordookhanians</a>, <em>CTO</em></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>General Meetings</strong></td>
+      <td>Tu/Th 5:00pm-6:20pm, Peterson Hall: 108</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Customer Meetings</strong></td>
+      <td>M 10:00am-10:50am, WLH 2113</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>M 11:00am-11:50am, WLH 2113</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>M 12:00pm-12:50pm, WLH 2113</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>M 1:00pm-1:50pm, WLH 2113</td>
+    </tr>
+      <td style="text-align: left"> </td>
+      <td>M 3:00pm-3:50pm, WLH 2113</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>M 4:00pm-4:50pm, WLH 2113</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>M 5:00pm-5:50pm, WLH 2113</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>M 6:00pm-6:50pm, WLH 2113</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Engineer All-hands </strong> <em>(Lab)</em></td>
+      <td>W 9:00am-11:50am at B240, B250, and B260</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>W 12:00pm-2:50pm at B240, B250, and B260</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Final</strong></td>
+      <td>Thursday, March 23rd</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>7:00pm-9:59pm</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>Peterson Hall</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Office</strong></td>
+      <td>CSE 2204</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Phone</strong></td>
+      <td>858-534-4725</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>Consulting Hours</strong></td>
+      <td>Tu  3:15pm-4:05pm  By appointment only</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>Th  3:15pm-4:05pm  By appointment only</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td>Other availabilities by appointment</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="links">Links</h3>
+
+<ul>
+  <li><a href="/~cs110x/static/syllabus">Syllabus</a></li>
+  <li><a href="/~cs110x/static/professionalism">Professionalism</a></li>
+  <li><a href="/~cs110x/static/labs">Labs</a></li>
+  <li><a href="/~cs110x/static/lectures_a00">Lecture Notes</a></li>
+  <li><a href="/~cs110x/static/tutor_hours">Course Calendar (Includes Tutor Hours)</a></li>
+  <li><a href="https://piazza.com/class/ilnaarip3992a3">Question Answer Board (Piazza)</a></li>
+  <li><a href="/~cs110x/static/logistics_a00">Logistics (Roles, Charge Numbers, Deadlines, Project Schedule, etc.)</a></li>
+  <li><a href="/~cs110x/static/resources">Readings and Resources</a></li>
+  <li><a href="http://www.gradesource.com/reports/7/28639/index.html">GradeSource</a></li>
+  <li><a href="http://www.sourcegrade.xyz">SourceGrade (GradeSource Lookup Tool)</a></li>
+  <li><a href="https://autograder.ucsd.edu/login">Autograder</a></li>
+  <li><a href="https://students.ucsd.edu/academics/academic-integrity/index.html">Academic Integrity</a></li>
+  <li><a href="http://cse110.com">CSE110 Class Tools Website</a></li>
+</ul>
+
+  </div>
+  
+</div>
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
+�
+�\�5      X�([X�([=^�X�!�       :http://ieng6.ucsd.edu/~cs110x/ strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Wed, 25 Jan 2017 22:01:54 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Wed, 25 Jan 2017 21:01:25 GMT
+Etag: "62cdfc8-20f0-891d1340"
+Accept-Ranges: bytes
+Content-Length: 8432
+Content-Type: text/html
+ original-response-headers Date: Wed, 25 Jan 2017 22:01:54 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Wed, 25 Jan 2017 21:01:25 GMT
+Etag: "62cdfc8-20f0-891d1340"
+Accept-Ranges: bytes
+Content-Length: 8432
+Connection: close
+Content-Type: text/html
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 8 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/poole.css 1,1,0,4097 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/syntax.css 1,1,0,4097 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/lanyon.css 1,1,0,4097 predictor::http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400 1,1,0,4096 predictor::http://fonts.gstatic.com/s/ptserif/v8/I-OtoJZa3TeyH6D9oli3ifesZW2xOQ-xsNqO47m55DA.woff2 1,1,0,4096 predictor::http://fonts.gstatic.com/s/ptsans/v8/ATKpv8nLYAKUYexo8iqqrg.woff2 1,1,0,4096 predictor::http://fonts.gstatic.com/s/ptserif/v8/03aPdn7fFF3H6ngCgAlQzPk_vArhqVIZ0nv9q090hN8.woff2 1,1,0,4096 predictor::http://fonts.gstatic.com/s/ptserif/v8/QABk9IxT-LFTJ_dQzv7xpI4P5ICox8Kq3LLUNMylGO4.woff2 1,1,0,4096 necko:classified 1    �

@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lab 5 &middot; CSE 110 Software Engineering
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/~cs110x/public/css/poole.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/syntax.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/~cs110x/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/~cs110x/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Course Website for CSE110, Winter Quarter 2017</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/~cs110x/">Home</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/labs/">Labs</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/lectures_a00/">Lecture Notes</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/logistics_a00/">Logistics</a>
+    <a class="sidebar-nav-item active" href="/~cs110x/static/professionalism/">Professionalism</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/resources/">Resources</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/artifacts/">Artifacts</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/syllabus/">Syllabus</a>
+    <!-- <a class="sidebar-nav-item" href="">Weekly TODO</a> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://ieng6.ucsd.edu/~cs110x/" title="Home">CSE 110 Software Engineering</a>
+            <small>Inc.</small>
+          </h3>
+        </div>
+      </div>
+
+
+      <div class="container content" id='instructions'>
+        <h1 id="using-parse--github">Firebase and AngularJS</h1>
+
+<hr />
+
+<h2 id="section-1">Section 1: Getting Started</h2>
+<ul>
+  <li>
+    <h3>Why do you need a database?</h3>
+    Database's are an essential part of any application that handles data.
+    Databases are not merely containers for your objects allowing you to store and retrieve them.
+    They give you extra power over your data allowing you to <strong>query</strong> (ask the database questions)
+    and perform various operations such as join which allows you to relate data from two different
+    tables together. Most importantly they provide you the infrastructure and reliability to scale
+    your application as it grows.
+  </li>
+  <li>
+    <h3>Why Firebase?</h3>
+    Databases can be cumbersome to set up. Firebase eliminates a lot of this hassle by both hosting
+    the information for your application and providing API's that allow you to interact with this
+    stored cloud data from your application. Firebase offers API's for Web Development, Android
+    and IOS. Meaning if you provide a service that spans all 3 platforms you just need the 1 database
+    interacting with the 3 platforms Firebase API's.
+    <img src="/~cs110x/static/img/lab5/fireBase1.png" alt="image1" />
+  </li>
+</ul>
+<h2 id="section-2">Section 2: Create a Firebase account</h2>
+<ul>
+  <li>
+    You need to do this lab in your VM.
+  </li>
+  <li>
+    Visit <a href="https://www.firebase.com/">Firebase</a>.
+  </li>
+  <li>
+   <ol style=1>
+    <li>
+      Click <strong>LOGIN TO LEGACY CONSOLE</strong>.
+    </li>
+    <li>
+      Click <strong>Sign in with Google</strong>.
+    </li>
+    <li>
+      Then choose your UCSD email address and proceed to next step.
+      <img src="/~cs110x/static/img/lab5/fireBase2.png" alt="image2" />
+    </li>
+    <li>
+      Download the Code Editor: <a href="http://brackets.io/">Brackets</a>
+      <ul>
+        <li>
+          In the homepage of the Brackets web click <strong>Download Brackets 1.8</strong>.
+        </li>
+        <li><strong>Note:</strong> if you ran into errors with installation you might be missing a dependency 
+        try downloading the <strong><a href="https://launchpad.net/~ubuntu-security-proposed/+archive/ubuntu/ppa/+build/7110687/+files/libgcrypt11_1.5.4-2ubuntu1.1_amd64.deb">libgcrypt</a> package and then</strong>  
+        try clicking on the downloaded package and install the dependency and then try installing brackets again.
+        
+        </li>
+        <li>
+          After the file is downloaded, install the Brackets and then open the application (you can find the tab to open Brackets via search in VM).
+        </li>
+      </ul>
+    </li>
+    <li>
+      Now open a Terminal window and type: 
+      <pre>
+        <code>
+        cd ~/Desktop
+        mkdir FirebaseApp
+        cd FirebaseApp
+        </code>
+      </pre>
+    </li>
+    <li>
+      Now open <strong>FirebaseApp</strong> directory in Brackets:
+      <br />
+      <strong>File -&gt;Open Folder -&gt;FirebaseApp</strong>.     
+    </li>
+    <li>
+      Create an index.html (this is the root file for your website)
+      <br />
+      <strong>File-&gt;New</strong><br/>
+      Press <strong>cntrl+s</strong> to save. This will prompt you to name the file:<br />
+      Name it <strong>index.html</strong>.
+    </li>
+    <li>
+      You need to have chrome browser installed on your VM, if not install it:
+      <br />
+      <a href="https://www.google.com/chrome/browser/desktop/">Chrome</a>
+    </li>
+    <li>
+      Copy the basic HTML template below to your index.html:
+      <pre>
+        <code>
+            <!DOCTYPE html>
+            &lt;html&gt;
+	        &lt;head&gt;
+	        &lt;title&gt;Team Members&lt;/title&gt;
+
+                &lt;/head&gt;
+
+                &lt;body&gt;
+
+                &lt;p&gt;Hello World&lt;/p&gt;
+
+                &lt;/body&gt;
+           &lt;/html&gt;
+        </code>
+      </pre> 
+    </li>
+    <li>
+      Test using your live preview button (lightning bolt on the right side of the screen):
+      <img src="/~cs110x/static/img/lab5/Brackets1.png" alt="image3" />
+
+    </li>
+    <li>
+      Now it is time to add Bootstrap and Angular:
+      <ul>
+        <li>
+          Visist <a href="https://www.bootstrapcdn.com"/>BootstrapCDN</a>.
+        </li>
+        <li>
+         Click the arrow on the <strong>Complete CSS</strong> dropdown and copy paste the <strong>HTML</strong> link tag inside of the 
+         &lt;head&gt;&lt;/head&gt; tag of index.html:
+         <img src="/~cs110x/static/img/lab5/Bootstrap1.png" alt="image4" />
+         <img src="/~cs110x/static/img/lab5/Bootstrap2.png" alt="image5" />
+        </li>
+      </ul>
+    </li>
+    <li>
+      Next, add AngularJS to index.html:
+      <ul>
+       <li>Visit <a href="https://angularjs.org/">AngularJS</a>
+         <img src="/~cs110x/static/img/lab5/AngularJS1.png" alt="image6" />
+       </li>
+       <li>
+         Click <strong>Download AngularJS 1</strong> and then copy and paste the CDN into the <strong>src</strong> field of script
+         tag after the closing &lt;/body&gt; tag.
+         <img src="/~cs110x/static/img/lab5/AngularJS2.png" alt="image7" />
+         <img src="/~cs110x/static/img/lab5/AngularJS3.png" alt="image8" />
+         
+       </li>
+      </ul>
+    </li>
+    <li>
+      Finally Add Angular Bootstrap CDN's:
+      <ul>
+        <li>
+          Visit <a href=https://cdnjs.com/libraries/angular-ui-bootstrap">ui_bootstrap</a>
+        </li>
+        <li>
+          Copy both CDN for <strong>ui-bootstrap.min.js</strong> and <strong>ui-bootstrap-tpls.min.js</strong>:
+          <pre>
+            <code>
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap-tpls.min.js"&gt;&lt;/script&gt;
+
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap.min.js"&gt;&lt;/script&gt;
+              
+            </code>
+          </pre>
+        </li>
+      </ul>
+    </li>
+    <li>
+      Now add the two script tags:
+      <pre>
+  &lt;script src="app.js"&gt;&lt;/script&gt;
+  &lt;script src="ng-team/teamController.js"&gt;&lt;/script&gt;
+      </pre>
+      Your code should be like below:
+     <img src="/~cs110x/static/img/lab5/index1.png" alt="image9" />
+    </li>
+    
+   </ol>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="section-3">Section 3: Modifying the Files</h2>
+
+<ul>
+  <li>Lets add some basic structure to our HTML code.
+    <ol style=1>
+      <li>Remove the <strong>"Hello World" </strong>paragraph tag.</li>
+      <li>Add two input fields to your <strong>index.html</strong> inside the <strong>body</strong> tag at the top: </li>
+      <ul>
+        <li> One for <strong>Teammate Name</strong>:
+          <pre>
+        &lt;label &gt; Teammate Name &lt;/label &gt;
+        &lt;input type="text" id="memberName"/&gt;
+          </pre>
+        </li>
+        <li> One for <strong>Teammate Age</strong>:
+          <pre>
+        &lt;label&gt; Teammate Age &lt;/label&gt;
+        &lt;input type="number" id="memberAge"/&gt;
+          </pre>
+        </li>
+        <li> A <strong>Save</strong> button
+          <pre>
+    &lt;div&gt; 
+        &lt;button class="btn btn-default" ng-click="saveMember()"&gt;Save
+            &lt;span class="glyphicon glyphicon-ok"&gt; &lt;/span&gt;
+      	&lt;/button&gt; 
+    &lt;/div&gt; 
+       	   </pre>
+        </li>
+        <li>
+            Your code should be like below:
+            <img src="/~cs110x/static/img/lab5/index2.png" alt="image10" />
+        </li>
+        <li>
+            The display of your website should be like below:
+            <img src="/~cs110x/static/img/lab5/website1.png" alt="image10" />
+        </li>
+        
+      </ul>
+      <li>
+          Next  you need to set up the basic file structure for your angular web application:
+          <ol style="1">
+            <li>First you need a new file called <strong>app.js</strong>
+              this will contain the Angular module that you need to connect your
+              JavaScript to the displayed HTML. You can create a new file by pressing
+              <strong>right click</strong> on the left margin of the Brackets' page and
+              selecting <strong>New File</strong>.
+              <ul>
+                <li>Inside the <strong>app.js</strong> add the following code:
+<pre>
+/*global angular*/
+angular.module('ngTeam', ['ui.bootstrap']);
+</pre>
+                    You might think that the <strong>"/*global angular*/"</strong>comment is
+                    just an ordinary comment, if you remove it and then save the file using 
+                    <strong> Ctrl + s</strong> keys, you should get an error message
+                    like below: <br />
+                    <strong> 'angular' was used before it was defined. </strong>	
+                </li>
+             </ul>
+            </li>
+            <li>
+              Next, navigate to the <strong>FirebaseApp</strong> folder and create a new 
+              subfolder called <strong>ng-team</strong>. 
+            </li>
+            <li>
+              Inside <strong>ng-team</strong> create a new file called <strong>
+              teamController.js</strong> by selecting <strong>File -&gt; New</strong>
+            </li>
+            <li>
+              Now you need to connect these new files to your index.html file.
+              <ul>
+                <li>
+                  Inside the first <strong>body</strong> tag add the <strong>ng-app</strong>
+                  and <strong>ng-controller</strong> fields:
+                  <pre>
+      &lt;body ng-app="ngTeam" ng-controller="teamController"&gt;
+                  </pre>
+                  This connects the created JavaScript files to your HTML.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Now it is time for coding some Angular functionalities. Angular has built in Model View Controller (MVC). 
+              <ul>
+                <li>Lets build your model inside your HTML first:
+                    <br />
+                    You can do this by adding the Angular <strong>ng-model</strong> inside
+                    your &lt;input&gt; labels. Follow the example below:
+                    <pre>
+&lt;input type="text" id="memberName" ng-model="teammate.name"/&gt;  
+&lt;input type="number" id="memberAge" ng-model="teammate.age"/&gt;
+                    </pre>
+                    Now these inputs are associated with a <strong>teammate</strong> field
+                    that has properties of <strong>name</strong> and <strong>age</strong>.
+                    <br/ >
+                    Also connect your button to the Angular ng-click property which will call
+                    <strong>saveMemeber</strong> function that you will write in future:
+                    <pre>
+&lt;button class="btn btn-default" ng-click="saveMember()"&gt;
+                    </pre>
+                    <br />
+                    Now add some Angular code to display the model properties to the user.
+                    Below the <strong>Save</strong> button add the HTML code:
+                    <pre>
+       Team Member Name: {{teammate.name}} &lt;br/&gt;
+       Team Member Age: {{teammate.age}}               
+                    </pre>
+                    The {{}} allow you to insert Angular JavaScript directly into your HTML
+                    which will "data-bind" the value of this variable meaning that it will
+                    change in HTML as soon as it is changed in JavaScript.
+                    <br />
+                    Your HTML code now should be like below:
+                    <img src="/~cs110x/static/img/lab5/index3.png" alt="image11" />
+                </li>
+              </ul> 
+            </li>
+            <li>
+              Now start building a controller for your model.
+              <ul>
+                <li>
+                  Open <strong>teamController.js</strong>, then add the following code to the file:
+                  <pre>
+  /*global alert,angular,Firebase*/
+  angular
+    .module('ngTeam')
+    .controller('teamController', function ($scope) {
+
+      'use strict';
+      $scope.saveMember = function() {
+        alert('You have saved: ' + $scope.teammate.name);
+      };
+    });
+                  </pre>
+                  <strong>1.</strong> This code creates an anonymous function for the controller. The $scope gives access 
+                  to the html because you linked both the module and controller inside 
+                  the &lt;body&gt; already.<br />
+                  <strong>2.</strong> You instantiate the $scope.teammate field for your model here as well. 
+                  This is what you are appending your "name" and "age" field to inside the html model.<br />
+                  <strong>3.</strong> Finally the $scope.saveMember is the function that is called by the user upon click. This for now will just send and alert so you can test it and make sure it works.<br />
+                </li>
+              </ul>
+            </li>
+          </ol>    
+      </li>
+      <li>
+        Now it is time to make sure that your code functions correctly.
+        <ul>
+          <li>Go back to your live preview and hit refresh. Make sure all files are saved.
+              The live preview should look like the below picture.
+              <img src="/~cs110x/static/img/lab5/preview1.png" alt="image12" />
+              Notice how as you type information into the form it was automatically displayed 
+              in the text below? That is because of a very cool feature of Angular called two 
+              way data binding. As you edit a variable the results are immediately fed back to
+              the HTML. Angular uses this feature to facilitate its implementation of the 
+              Model-View-Controller (MVC) architectural pattern. 
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <hr />
+  <h1 id="check-point----">‚Äî <strong>In Progress Check</strong> ‚Äî</h1>
+
+  <li>When you are able to run the <strong>Web Application</strong>  on a browser and it worked like the example provided,
+      add a ticket to the Autograder queue with one tag for the priority of your ticket and another with 
+      in progress check status. Bring up your lab reservation time in cse110.com for the staff member to verify. Select your lab reservation time correctly otherwise you will earn a professionalism deduction. A member of the staff will verify that you have completed the tasks along with your lab reservation time.
+  </li>
+  <hr />
+</ul>
+
+<hr />
+
+<h2 id="section-4">Section 4: Plugging in Firebase</h2>
+
+<ul>
+  <li>Log in to Firebase and then click on <strong>CREATE NEW PROJECT</strong>.
+    <ul>
+      <li>Insert <strong>CSE110project</strong> inside the <strong>Project name</strong> place holder.
+          Then click <strong>CREATE PROJECT.</strong>
+      </li>
+      <li>It will take a few second for the fire base to create your project and then
+          when it is finaly done it will automatically direct you to the Dashboard of the
+          project. (If in anycase it did not take you there just simply click on your project box and it will 
+          take you there).
+      </li>
+    </ul>
+  </li>
+  <li>Add new entries to your data.
+    <ul>
+      <li>
+        In the homepage of your project click on the <strong>Database</strong> tab on the left corner of the
+        page. This will open up the <strong>Realtime Database</strong> page where it stores your data entries.
+        (If your page was missing some context or was not complete based on the image below just refresh
+        the page until it looks similar to the image).
+        <img src="/~cs110x/static/img/lab5/SetUpF1.png" alt="SetUpF1" />
+
+      </li>
+      <li>
+        Now move your cursor on the bold text starting with <strong>cse110project-</strong> and then you will see a green plus button appears on the same line, clcik on the plus button. Then fill in the <strong>Name</strong> and <strong>Value</strong> with anything and then click on <strong>ADD</strong> button.
+        <img src="/~cs110x/static/img/lab5/SetUpF2.png" alt="SetUpF2" />
+      </li> 
+      <li>
+        Fire base stores its information as name value pairs as you can see above. Underneath the hood, Firebase is built on top of NoSQL or a "non-relational" database.
+        <ul>
+          <li>
+            You can read more about this here:
+            <a href="https://www.mongodb.com/nosql-explained">nosql-explained</a>
+          </li>
+        </ul>
+      </li>
+      <li> In order to be able to add and retrieve the information from Firebase you should make the data base of this project both readable
+      and writeable to the public. To do this select the <strong>RULES</strong> option on the top of the page.
+      <img src="/~cs110x/static/img/lab5/RolesF1.png" alt="RolesF1" />
+      Now remove "auth != null" from the two lines and write true instead like shown below and then click <strong>PUBLISH</strong>.
+      <img src="/~cs110x/static/img/lab5/RolesF2.png" alt="RolesF2" />
+      For more information on the permissions in Firebase go to this link:
+      <a href="https://firebase.google.com/docs/database/security/quickstart">Security</a>.
+      </li>
+      
+    </ul>
+  </li>
+  <li>
+    Create a Firebase object in controller using Firebase URL:
+    <ul>
+      <li>
+        Copy the URL from your database and paste it into your controller.
+         <img src="/~cs110x/static/img/lab5/SetUpF2.png" alt="SetUpF3" />
+        Open <strong>teamController.js</strong> and before the <strong>saveMemeber</strong> function add the following line and replace
+        https://fiery-inferno-4197.firebaseio.com with <strong> your own Firebase URL:</strong>
+        <pre>
+$scope.myData = new Firebase("https://fiery-inferno-4197.firebaseio.com");
+        </pre>
+      </li>
+      <li> The myData variable will allow you to manipulate your Firebase database from within your code. Read about the functionalities below. Only a few of this functionalities are covered in this lab.
+      <br />
+      <a href = "https://www.firebase.com/docs/web/guide">Guide</a>
+      <br />
+      Firebase uses JSON objects to store its information if you're not familiar with JSON you can learn more about it by going to the link below.
+      <br />
+      <a href = "https://www.firebase.com/json">JSON</a>
+  
+      </li>
+      <li>
+        Now lets push the data to Firebase. Add the following code into your saveMember() method:
+        <pre>
+    $scope.myData.push($scope.teammate);
+    //This is just to empty the Name and Age fields after saving
+    $scope.teammate.name = "";  
+    $scope.teammate.age = 0;
+
+        </pre>
+      </li>
+      <li>
+        Now you need to add the Firebase library:
+        <ul>
+          <li>
+            Visit <a href="https://www.firebase.com/docs/web/quickstart.html">Quick Start</a>.
+          </li>
+          <li>
+            Copy the CDN to your file on the line above the other scripts in <strong>index.html</strong>.
+            <pre>
+&lt;script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"&gt;&lt;/script&gt;          
+            </pre>
+          </li>
+
+        </ul>
+      </li>
+      <li>
+        Now lets add a person to the data basee. Again click on the lightning bolt to open the browser and fill in the fields with some inputs and then click <strong>Submit</strong>.
+      </li>
+      <li>After submition go back to your Firebase/Database page and you should see that the new object is added to your Data base. If you expand the objec by clicking on it, it should show you the name and the age you inserted.
+      <img src="/~cs110x/static/img/lab5/SetUpF4.png" alt="SetUpF4"/>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Let's now add some structure to this databae so that it is more readable.
+    <ul>
+      <li>
+        The <strong>push</strong> function you used above creates a unique key in the database and inserts your data below that. This is the "Kc60..." number above your data.
+      </li>
+      <li>
+        If you would like yo choose the key associated with your data you can use the <strong>set</strong> method.
+      </li>
+      <li>
+        To begin lets add a field to our html file in place of our first label "Teammate Name", so remove the label "Teammate Name" with the corresponding input fields and add the code below.
+        <pre>
+  &lt;label&gt;Teammate First Name&lt;/label&gt;
+  &lt;input type="text" id="memberName" ng-model="teammate.name"&gt;&lt;br&gt;
+  &lt;label&gt;Teammate FullName&lt;/label&gt;
+  &lt;input type="text" id="memberFullName" ng-model="teammate.full_name"&gt;&lt;br&gt;
+
+        </pre>
+        <ul>
+          <li>The first filed will be the first name and key for your database entry.</li>
+          <li>The second field will store the team members full name</li>
+        </ul>
+      </li>
+      <li>
+        Next lets change how you are displaying the real-time data entry using an Angular filter:
+        <ul>
+          <li>Remove the Team Member Name and Age fields. Replace the tags inside of index.html with the line below:
+            <pre>
+        &lt;pre&gt;{{teammate | json}}&lt;/pre&gt;
+            </pre>
+
+          </li>
+
+
+          <li>
+            The result should be like the image below:
+            <img src="/~cs110x/static/img/lab5/ResultF1.png" alt="ResultF1"/>
+            In case you did something wrong please look at the images below and make sure that everything looks the same:<br />
+            <strong>index.html:</strong>
+            <img src="/~cs110x/static/img/lab5/index.png" alt="SetUpF4"/><br />
+            <strong>teamController.js</strong>
+            <img src="/~cs110x/static/img/lab5/teamController.png" alt="SetUpF4"/>
+          </li>
+        </ul>
+
+      </li>
+      <li>
+        Next update your teamController file, add the following code after the line "$scope.myData = new Firebase...".
+        <pre>
+        $scope.teammate = {};
+        </pre>
+        This allows you to create a name vlaue pairs, instead of an array. This is how JSON objects are formatted.
+      </li>
+      <li>
+        Next replace the code inside the saveMemebr method with:
+        <pre> 
+    var teammateRef, entryKey;
+    /*Creates a ref to the teammates table of the database*/
+    teammateRef = $scope.myData.child("teammates");
+    /*Use this for your key to enter data*/
+    entryKey = $scope.teammate.name;
+    teammateRef.child(entryKey).set($scope.teammate);
+    /*Will erase the fields on the screen containing the name and age*/
+    $scope.teammate.name = "";
+    $scope.teammate.full_name = "";
+    $scope.teammate.age = 0;
+        </pre>
+      </li>
+      <li>
+        Now try again adding a new entry to the data base and check your Firebase to make sure that it is added.
+        <img src="/~cs110x/static/img/lab5/TeammateAdded.png" alt="TeammateAdded" />
+      </li>
+    </ul>
+  </li>
+  <li id="retrievedata">
+    Retrieve data from data base:
+    <ul>
+      <li>How do you pull data back from data base to the webpage?
+
+      </li>
+      <li>Start by creating new fields in the controller after "$scope.teammate" line, (for the second field use your own Firebase URL with the /teammates at the end):
+        <pre>
+  $scope.teammatesData = {};
+  $scope.myTeammateData = new Firebase("https://cse110project-c30f3.firebaseio.com/teammates");
+        </pre>
+        
+      </li>
+      <li>
+      Now add a new parameter to the controller declaration at the top call $timeout:<br/>
+        <pre>
+  .controller('teamController', function ($scope, $timeout) {
+        </pre>
+      </li>
+      <li>
+        Next add a new function to the $scope variable: <br />
+        <pre>
+  $scope.myTeammateData.on('value', function (dataSnapshot) {
+      $timeout(function () {
+          $scope.teammatesData = dataSnapshot.val();
+      });
+  });
+        </pre>
+        <ul>
+          <li>
+            This is an anonymous function called by the <storng>myTeammateData.on()</storng> method which is a listener that detects updates to the database its attached too. In this case it detects the updates to your apps database specifically the "teammates" table.
+          </li>
+          <li>
+            Every time the table is altered this listener function is triggered and pulls all the information from your database and places it in the dataSnapshot parameter.
+            <br /> For more info on <strong>.on</strong> go to <a href="https://www.firebase.com/docs/web/api/query/on.html">This Link</a>.
+          </li>
+          <li>
+            Next you wrap your <strong>$scope.teammatesData</strong> update in the <strong>$timeout</strong> function. This loads your database when your page is initially loaded. Without it the information would only display when a change is detected.
+            <br /> For more info on <strong>$timeout</strong> go to <a href="https://www.firebase.com/docs/web/libraries/angular/guide/beyond-angularfire.html">time-out link</a>
+          </li>
+
+        </ul>
+        
+      </li>
+
+      
+    </ul>
+  </li> <!--retrieve data-->
+  <li>Now use Angular to display a table of your database information:
+    <ul>
+      <li>In <strong>index.html</strong> add the following code below the last &lt;/div&gt;.
+      <pre>
+  &lt;div&gt;
+    &lt;table class="table table-bordered"&gt;
+      &lt;thead&gt;
+        &lt;th&gt;Member Name&lt;/th&gt;
+        &lt;th&gt;Member Full Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+      &lt;/thead&gt;
+      &lt;tbody ng-repeat="teamMember in teammatesData"&gt;
+        {{teamMember.name}}
+        &lt;tr&gt;
+          &lt;td&gt;{{teamMember.name}}&lt;/td&gt;
+          &lt;td&gt;{{teamMember.full_name}}&lt;/td&gt;
+          &lt;td&gt;{{teamMember.age}}&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+      </pre>
+        
+      </li>
+      <li>
+        Pay close attention to the line that reads <strong>ng-repeat="teamMember in teammatesData"</strong>. This it an angular for each loop. It takes your <strong>teammatesData</strong> you just updated in the controller method and loops over it. Everything between the <strong>tbody</strong> tags is part of this loop. Thus you are able to dynamically update a table with whatever data we pull down.
+      </li>
+    </ul>
+  </li><!--display table-->
+  <li>
+    Now test it and make sure that everything works perfectly as show in the image below.
+    <img src="/~cs110x/static/img/lab5/FinalF1.png" alt="FinalF1"/></>
+  </li>
+   <h2>Completion Checkoff:</h2>
+        Complete all the tasks above in order and be able to store and laod information from Firebase data base to receive full credit. Click on <strong>lightning bolt</strong> button and present the page shown in the image above to a tutor. When you complete add a ticket to the Autograder queue with one tag for the priority of your ticket and another with lab completion check tag so a member of the staff will help you. However bear in mind that you will only get checkoff
+        prioirty during your own lab reservation time. During any other CSE 110 lab hour your checkoff request will
+        be considered only if there are staff members who are not helping students from that lab hour. 
+</ul>
+
+  <!--
+  <li>In the upper left hand corner choose <strong>Select an App =&gt; Create App</strong><br />
+<img src="/~cs110x/static/img/lab5/" alt="" /></li>
+  <li>Name the application ‚Äúoauth2tutorial‚Äù<br />
+<img src="/~cs110x/static/img/lab5/image2.png" alt="image2" /></li>
+  <li>Next we will set up the web hosting functionality in Parse.
+    <ul>
+      <li>Select <strong>Hosting</strong> from the left side navigation bar in oauth2tutorial App Settings<br />
+<img src="/~cs110x/static/img/lab5/image3.png" alt="image3" /></li>
+      <li>In the Web Hosting section select the text box and type a unique name for your site eg. ‚Äúmy-awesome-site‚Äù<br />
+<img src="/~cs110x/static/img/lab5/image4.png" alt="image4" /></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="section-4-register-your-application-with-github">Section 4: Register your application with Github</h2>
+
+<ul>
+  <li>In order for your application to communicate with GitHub it must be registered with GitHub. To do this visit the below link and fill out the information to register the application with GitHub.
+    <ul>
+      <li><a href="https://github.com/settings/applications/new">https://github.com/settings/applications/new</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>Fill in the information<br />
+<img src="/~cs110x/static/img/lab5/image5.png" alt="image5" /></p>
+  </li>
+  <li>
+    <p>Click <strong>Register application</strong><br />
+<img src="/~cs110x/static/img/lab5/image6.png" alt="image6" /></p>
+  </li>
+  <li>Leave this window open you will need the keys for future steps.</li>
+</ul>
+
+<hr />
+
+<h1 id="check-point-">‚Äî <strong>CHECK POINT</strong> ‚Äî</h1>
+
+<hr />
+
+<h2 id="section-5-next-you-will-need-to-download-and-install-parses-command-line-tool">Section 5: Next you will need to download and install Parses command line tool</h2>
+
+<ul>
+  <li>Parse offers a powerful command line tool that provides you the power to create and manage your database without the hassle of dealing with servers. This can be accomplished via there Cloud Code framework accessed via command line tools.</li>
+  <li>Visit the below link for details on Cloud Code
+    <ul>
+      <li><a href="https://parse.com/docs/cloud_code_guide">https://parse.com/docs/cloud_code_guide</a></li>
+    </ul>
+  </li>
+  <li>To install command line tool on Mac/Linux type the following command
+    <ul>
+      <li>‚Äúcurl -s https://www.parse.com/downloads/cloud_code/installer.sh | sudo /bin/bash‚Äù<br />
+<img src="/~cs110x/static/img/lab5/image7.png" alt="image7" /></li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="section-6-downloading-and-setting-up-your-application">Section 6: Downloading and Setting up your application</h2>
+
+<ul>
+  <li>Create a new folder by typing:
+    <ul>
+      <li><code>mkdir parseoauth2tutorial</code></li>
+    </ul>
+  </li>
+  <li>Go into this new directory and clone the Parse tutorial github
+    <ul>
+      <li><code>git clone https://github.com/ParsePlatform/CloudCodeOAuthGitHubTutorial</code></li>
+    </ul>
+  </li>
+  <li>Go to the new directory:
+    <ul>
+      <li>~/parseoauth2tutorial/CloudCodeOAuthGitHubTutorial/cloud<br />
+<img src="/~cs110x/static/img/lab5/image8.png" alt="image8" /></li>
+    </ul>
+  </li>
+  <li>Next you will need to create a Cloud Code Environment for your Parse App. In the ~/‚Ä¶/CloudCodeOAuthGitHubTutorial folder type the below command.
+    <ul>
+      <li><code>parse new</code></li>
+      <li>Then type your email and password associated with your Parse user account. It should then print out the application you have created with Parse.<br />
+<img src="/~cs110x/static/img/lab5/image9.png" alt="image9" /><br />
+<img src="/~cs110x/static/img/lab5/image10.png" alt="image10" /></li>
+      <li>Select your App</li>
+    </ul>
+  </li>
+  <li>Now You have a <strong>parse</strong> folder that contains <strong>cloud config</strong> and <strong>public</strong> directories. These are used to interface with Parse and display a website at the address you specified in parse.
+    <ul>
+      <li>To push your website to Parse, navigate into the Parse folder you just created and type: <code>parse deploy</code><br />
+<img src="/~cs110x/static/img/lab5/image11.png" alt="image11" /></li>
+      <li>Now visit the url you created on your parse hosting page
+        <ul>
+          <li>‚Äúmy-site.parseapp.com‚Äù</li>
+          <li>You should see the following displayed.<br />
+<img src="/~cs110x/static/img/lab5/image12.png" alt="image12" /></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Now you will move the entire <strong>parse</strong> folder into the directory above.
+    <ul>
+      <li><code>mv parse ..</code></li>
+    </ul>
+  </li>
+  <li>Change directory to <strong>parse</strong> and copy <strong>cloud</strong> into <strong>parse</strong>.
+    <ul>
+      <li><code>cd parse</code></li>
+      <li><code>cp -r ../cloud .</code></li>
+      <li>This will replace the default cloud directory with the one downloaded from GitHub</li>
+    </ul>
+  </li>
+  <li>When a <code>parse deploy</code> is executed, the cloud directory is what pushed to Parse. You can see these modifications by going to your app on Parse. Navigate to Parse Core and click on the Cloud Code section on the right. All of the files in your cloud directory should appear here.</li>
+</ul>
+
+<hr />
+
+<h2 id="section-7-next-we-will-edit-our-downloaded-files-so-that-they-are-configured-to-communicate-with-our-application">Section 7: Next we will edit our downloaded files so that they are configured to communicate with our application</h2>
+
+<ul>
+  <li>Open <strong>main.js</strong>
+    <ul>
+      <li>Edit the githubClientID and githubClientSecret variables with your ID and Secret key from the GitHub page where you registered your application<br />
+<img src="/~cs110x/static/img/lab5/image13.png" alt="image13" /><br />
+<img src="/~cs110x/static/img/lab5/image14.png" alt="image14" /></li>
+    </ul>
+  </li>
+  <li>Replace the Parse application id and javascript key in <strong>views/head.ejs</strong>
+    <ul>
+      <li>The Keys can be found on your Parse application page <strong>Settings=&gt;Keys</strong><br />
+<img src="/~cs110x/static/img/lab5/image15.png" alt="image15" /><br />
+<img src="/~cs110x/static/img/lab5/image16.png" alt="image16" /></li>
+      <li>Remove the public folder
+        <ul>
+          <li>Type: <code>rm public/index.html</code><br />
+<img src="/~cs110x/static/img/lab5/image17.png" alt="image17" /></li>
+        </ul>
+      </li>
+      <li>Now we are ready to deploy our website again
+        <ul>
+          <li>Type: <code>parse deploy</code></li>
+          <li>Visit the url you specified to parse: ‚Äúmy-site.parseapp.com‚Äù</li>
+          <li>You should now see this prompt<br />
+<img src="/~cs110x/static/img/lab5/image18.png" alt="image18" /></li>
+        </ul>
+      </li>
+      <li>Next you will see<br />
+<img src="/~cs110x/static/img/lab5/image19.png" alt="image19" />
+        <ul>
+          <li>Click ‚ÄúAuthorize application‚Äù<br />
+<img src="/~cs110x/static/img/lab5/image20.png" alt="image20" /></li>
+          <li>Now you will see the data that OAuth was able to retrieve from GitHub for your login</li>
+          <li>If you encounter any type of authentication error when trying to login like the one below:<br />
+<img src="/~cs110x/static/img/lab5/image21.png" alt="image21" />
+            <ul>
+              <li>On the Parse website under your application navigate to <strong>Settings=&gt;General</strong> at the bottom of the page <strong>under User Sessions</strong> make sure all the questions are answered ‚ÄúNo‚Äù<br />
+<img src="/~cs110x/static/img/lab5/image22.png" alt="image22" /></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="section-8-for-and-in-depth-understanding-of-how-parse-authentication-works-read-the-securing-objects-section-at-the-below-website">Section 8: For and in depth understanding of how Parse authentication works read the <strong>Securing Objects</strong> section at the below website</h2>
+
+<ul>
+  <li><a href="https://parse.com/tutorials/adding-third-party-authentication-to-your-web-app">https://parse.com/tutorials/adding-third-party-authentication-to-your-web-app</a></li>
+</ul>
+
+<hr />
+
+<h2 id="section-9-uses-for-oauth">Section 9: Uses for OAuth</h2>
+
+<ul>
+  <li>The functionality of OAuth can be extended to a multitude of different websites such as Facebook and Google +</li>
+  <li>OAuth can be used on a variety of platforms such as android and IOS.</li>
+  <li>Finally OAuth is independent of Parse and can just as easily but used with your own local databases as well.</li>
+</ul>
+
+<hr />
+
+<h2 id="fin"><em>Fin</em></h2>
+
+<p><strong>Please show a tutor the Congratulations! screen to get checked off as complete.</strong></p>
+-->
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script type="text/javascript" src="/~cs110x//static/js/script.js"></script>
+  </body>
+</html>
+¸ØQ˝%      X§⁄|X§⁄|=q|≈XõüV   :    :http://ieng6.ucsd.edu/~cs110x/static/labs/lab5/index.html strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Wed, 08 Feb 2017 22:22:58 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Wed, 08 Feb 2017 18:45:43 GMT
+Etag: "68f2b93-97d2-459743c0"
+Accept-Ranges: bytes
+Content-Length: 38866
+Content-Type: text/html
+ original-response-headers Date: Wed, 08 Feb 2017 22:22:58 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Wed, 08 Feb 2017 18:45:43 GMT
+Etag: "68f2b93-97d2-459743c0"
+Accept-Ranges: bytes
+Content-Length: 38866
+Connection: close
+Content-Type: text/html
+ uncompressed-len 0 predictor::resource-count 28 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/poole.css 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/syntax.css 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/lanyon.css 1,1,0,8192 predictor::http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/fireBase1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/fireBase2.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/Brackets1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/Bootstrap1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/Bootstrap2.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/AngularJS1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/AngularJS2.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/AngularJS3.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/index1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/index2.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/website1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/index3.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/preview1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/SetUpF1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/SetUpF2.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/RolesF1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/RolesF2.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/SetUpF4.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/ResultF1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/index.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/teamController.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/TeammateAdded.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab5/FinalF1.png 1,1,0,8192 predictor::http://ieng6.ucsd.edu/~cs110x//static/js/script.js 1,1,0,8192   ó“

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lecture Notes &middot; CSE 110 Software Engineering
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/~cs110x/public/css/poole.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/syntax.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/~cs110x/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/~cs110x/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Course Website for CSE110, Winter Quarter 2017</p>
+  </div>
+
+<!-- Navbar -->
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/~cs110x/">Home</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/labs/">Labs</a>
+    <a class="sidebar-nav-item active" href="/~cs110x/static/lectures_a00/">Lecture Notes</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/logistics_a00/">Logistics</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/professionalism/">Professionalism</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/resources/">Resources</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/artifacts/">Artifacts</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/syllabus/">Syllabus</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://ieng6.ucsd.edu/~cs110x/" title="Home">CSE 110 Software Engineering</a>
+            <small>Inc.</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Lecture Notes</h1>
+  <h3 id="lecture-notes">Lecture Notes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Day</th>
+      <th>Topic</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+
+        <tr>
+        <td align="center"> 1 </td>
+        <td align="center"> Tue, Jan 10 </td>
+        <td align="center"> Class introduction. Syllabus. </td>
+        <td align="center">
+		 <a href="../syllabus">Link</a></td>
+        </tr>
+                
+        <tr>
+        <td align="center"> 1 </td>
+        <td align="center"> Thu, Jan 12 </td>
+        <td align="center"> Resume Review </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_One_Lecture_Two.pdf"-->W1_Thu<!--/a-->
+        </td>
+
+        </tr>
+                
+        <tr>
+        <td align="center"> 2 </td>
+        <td align="center"> Tue, Jan 17 </td>
+        <td align="center"> Team Building </td>
+        <td align="center"> 
+            <a href="CSE110WeekTwoLectureOneGiven.pdf">W2_Tue</a>
+        </td>
+        </tr>
+        
+        <tr>
+        <td align="center"> 2 </td>
+        <td align="center"> Thu, Jan 19 </td>
+        <td align="center"> Logistics </td>
+        <td align="center"> 
+            <a href="CSE110WeekTwoLectureTwo.pdf"-->W2_Thu</a>
+        </td>
+        </tr>
+  
+        <tr>
+        <td align="center"> 3 </td>
+        <td align="center"> Tue, Jan 24 </td>
+        <td align="center"> UML and Agile/Waterfall </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Three_Lecture_One.pdf"-->W3_Tue<!--/a-->
+        </td>
+        </tr>
+        
+        <tr>
+        <td align="center"> 3 </td>
+        <td align="center"> Thu, Jan 26 </td>
+        <td align="center"> Software Requirements </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Three_Lecture_Two.pdf"-->W3_Thu<!--/a-->
+        </td>
+        </tr>
+  
+        <tr>
+        <td align="center"> 4 </td>
+        <td align="center"> Tue, Jan 31 </td>
+        <td align="center"> Use Cases and Layering </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Four_Lecture_One.pdf"-->W4_Tue<!--/a-->
+        </td>
+        </tr>
+
+        <tr>
+        <td align="center"> 4 </td>
+        <td align="center"> Thu, Feb 2 </td>
+        <td align="center"> Code Reviews </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Four_Lecture_Two.pdf"-->W4_Thu<!--/a-->
+        </td>
+        </tr>
+
+        <tr>
+        <td align="center"> 5 </td>
+        <td align="center"> Tue, Feb 7 </td>
+        <td align="center"> Database Schemas and TDD </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Five_Lecture_One.pdf"-->W5_Tue<!--/a-->
+        </td>
+        </tr>
+   
+        <tr>
+        <td align="center"> 5 </td>
+        <td align="center"> Thu, Feb 9 </td>
+        <td align="center"> MVC and Pair Programming </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Five_Lecture_Two.pdf"-->W5_Thu<!--/a-->
+        </td>
+        </tr>
+
+        <tr>
+        <td align="center"> 6 </td>
+        <td align="center"> Tue, Feb 14 </td>
+        <td align="center"> Agile/Waterfall Revisited </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Six_Lecture_One.pdf"-->W6_Tue<!--/a-->
+        </td>
+        </tr>
+
+        <tr>
+        <td align="center"> 6 </td>
+        <td align="center"> Thu, Feb 16 </td>
+        <td align="center"> Financial Aspects of Software Engineering </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Six_Lecture_Two.pdf"-->W6_Thu<!--/a-->
+        </td>
+        </tr>
+      
+        <tr>
+        <td align="center"> 7 </td>
+        <td align="center"> Tue, Feb 21 </td>
+        <td align="center"> 401k/403b/457b's and Factory, Singleton, Command Design Patterns </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Seven_Lecture_One.pdf"-->W7_Tue<!--/a-->
+        </td>
+        </tr>
+       
+        <tr>
+        <td align="center"> 7 </td>
+        <td align="center"> Thu, Feb 23 </td>
+        <td align="center"> Adapter, Facade, Template Method, Iterator, and Composite Design Patterns </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Seven_Lecture_Two.pdf"-->W7_Thu<!--/a-->
+        </td>
+        </tr>
+        
+        <tr>
+        <td align="center"> 8 </td>
+        <td align="center"> Tue, Feb 28 </td>
+        <td align="center"> State, Proxy and Compound Design Patterns </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Eight_Lecture_One.pdf"-->W8_Tue<!--/a-->
+        </td>
+        </tr>
+
+        <tr>
+        <td align="center"> 8 </td>
+        <td align="center"> Thu, Mar 2 </td>
+        <td align="center"> Review of concepts from Head First Software Development. </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Eight_Lecture_Two.pdf"-->W8_Thu<!--/a-->
+        </td>
+        </tr>
+       
+        <tr>
+        <td align="center"> 9 </td>
+        <td align="center"> Tue, Mar 7 </td>
+        <td align="center"> Review of concepts from Head First Software Development. </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Nine_Lecture_One.pdf"-->W9_Tue<!--/a-->
+        </td>
+        </tr>
+
+        <tr>
+        <td align="center"> 9 </td>
+        <td align="center"> Thu, Mar 9 </td>
+        <td align="center"> Testing and Coupling/Cohesion </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Nine_Lecture_Two.pdf"-->W9_Thu<!--/a-->
+        </td>
+        </tr>
+
+        <tr>
+        <td align="center"> 10 </td>
+        <td align="center"> Tue, Mar 14 </td>
+        <td align="center"> Decision and Ethics </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Ten_Lecture_One.pdf"-->W10_Tue<!--/a-->
+        </td>
+        </tr>
+        
+        <tr>
+        <td align="center"> 10 </td>
+        <td align="center"> Thu, Mar 16 </td>
+        <td align="center"> Final Thoughts </td>
+        <td align="center"> 
+            <!--a href="CSE_110_Week_Ten_Lecture_Two.pdf"-->W10_Thu<!--/a-->
+        </td>
+        </tr>
+     
+  </tbody>
+</table>
+
+</div>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
+ø$øÔ      XˆiÑXˆiÑ=]Æ3XˆŒà   3    :http://ieng6.ucsd.edu/~cs110x/static/lectures_a00/ necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Wed, 25 Jan 2017 09:03:16 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 24 Jan 2017 08:07:26 GMT
+Etag: "40ca44e-2583-9b4acb80"
+Accept-Ranges: bytes
+Content-Length: 9603
+Content-Type: text/html
+ original-response-headers Date: Wed, 25 Jan 2017 09:03:16 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Tue, 24 Jan 2017 08:07:26 GMT
+Etag: "40ca44e-2583-9b4acb80"
+Accept-Ranges: bytes
+Content-Length: 9603
+Connection: close
+Content-Type: text/html
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 4 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/poole.css 1,1,1485334993,4096 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/syntax.css 1,1,1485334993,4096 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/lanyon.css 1,1,1485334993,4096 predictor::http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400 1,1,1485334993,4096   %ƒ

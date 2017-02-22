@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lab 3 &middot; CSE 110 Software Engineering
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/~cs110x/public/css/poole.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/syntax.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/~cs110x/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/~cs110x/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Course Website for CSE110, Winter Quarter 2017</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/~cs110x/">Home</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/labs/">Labs</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/lectures_a00/">Lecture Notes</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/logistics_a00/">Logistics</a>
+    <a class="sidebar-nav-item active" href="/~cs110x/static/professionalism/">Professionalism</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/resources/">Resources</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/artifacts/">Artifacts</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/syllabus/">Syllabus</a>
+    <!-- <a class="sidebar-nav-item" href="">Weekly TODO</a> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://ieng6.ucsd.edu/~cs110x/" title="Home">CSE 110 Software Engineering</a>
+            <small>Inc.</small>
+          </h3>
+        </div>
+      </div>
+
+
+      <div class="container content" id='instructions'>
+
+        <h1 id="the-parse-database">Android Calculator</h1>
+<p>Before you start the lab please update your Android Studio to version 1.5.2. If that is not available
+for you then update to 2.3.2 stable version. If you did your pre-lab after 10 am today you do not do this step
+as the page was updated to install the 1.5.2 version. When open
+the Android Studio click on the <strong>gear wheel</strong> on the right bottom of the screen and click
+on the <strong>check for updates</strong> option. Next click on <strong>Update and restart</strong> button
+to update to 1.5.2 or 2.3.2 version, and make sure everything goes fine. Once the update is complete continue with the lab. Some parts could be little
+different but nothing major should be different than the 1.5.1 version</p></br>
+
+<h2 id="parse">Unit 1: Introduction to Android</h2>
+<ul>
+  <li>What is Android?
+    <ul>
+      <li>Android as many may know is an operating system offered by Google for mobile 
+          devices. It uses java under the hood with many API offered by developers. An 
+          application programming interface or API 
+          is a library provided by other developers to facilitate certain generic 
+          functionalities for Android developers to use. You could read more about it 
+          <a href="https://en.wikipedia.org/wiki/Application_programming_interface" 
+          target="_blank">here</a>. Android applications can be developed for both phones 
+          tablets that are running on Android OS. The latest version of Android at the 
+          momment is called Android Nougat. IF intrested, more information can be accessed 
+          <a href="https://plus.google.com/communities/100109051988417688444" target="_blank">here</a>. 
+          In the following lab some of the basic concepts will be covered to help get 
+          aspiring Android developers to start exploring possibilties. The following lab is not a 
+	  comprehensive tutorial but instead is a great start to an enjoyable adventure that 
+          will hopefully inspire many great projects and products to come. Be bold, limitless 
+          and don't be afraid of possibitlies.</li>
+    </ul>
+  </li>
+  <li>Why Android?
+    <ul>
+      <li>In CSE110 there is 10 weeks (really more like 8) to develop an application that 
+          works from the ground up and Android offers a great platfrom with a vibrant community
+          and Google offers regular updates with
+          new API every year that is announced during <a href="https://events.google.com/io2016/" 
+          target="_blank">Google I/O event</a>.
+    </ul>
+  </li>
+  <li>In order to get the In Progress Check you will need to run the <strong>First Application</strong> application successfuly 
+      on the day of the lab during your specific lab reservation time. </li>
+</ul>
+
+<hr />
+
+<h2 id="dependcies">Unit 2: Requirements</h2>
+<ul>
+  <li>Follow the pre-lab on how to download and install the 
+      <a href="http://ieng6.ucsd.edu/~cs110x/static/labs/lab3/index1.html" target="_blank">
+      Android Studio</a></li>
+<li>Start a new project. 
+    <ul>      <li> Once the Android Studio program is launched click on the "Start a new 
+                   Android Studio project" to create the first project.<img src="/~cs110x/static/img/newLab3/image1.15.png" alt="image1" /></li>
+              <li> Name the application "FirstApplication"<img src="/~cs110x/static/img/newLab3/image2.png" alt="image2" /></li>
+              <li> The next page asks for the form factors and minimum SDK that a develpor 
+                   would like their application to run on. The minimum SDK refers to the version 
+                   of android any device running the application will be required to have in order 
+                   to run properly. Select "API 15: Android 4.0.3(IceCreamSandwich) and click Next
+		   <img src="/~cs110x/static/img/newLab3/image3.png" alt="image3" />
+              </li>
+              <li>Next there will be series of template "Activities" to add to the application. 
+                  Selecting these activities will configure the application for specific tasks 
+                  such as the "Login Activity". For now select the "Basic Activity" and select Next. 
+                  Later additonal activities could be added.
+		  <img src="/~cs110x/static/img/newLab3/image4.png" alt="image4" />
+              </li>
+              <li>Name the activity HelloWorld and click Finish. Android studio will now create the
+                  project.
+              </li>
+              <li>The project will now generates all the necessary files to create the application 
+                  which will load in a window similar the one below after about 1-2 minutes.
+                      <ul><li>Note: if the project view (left side of the screen) looks different than 
+                          the image below, click the dropdown menu in the upper left (labeled "Android") 
+                          and change the view to match.
+                      </li>
+                      <li>Alternatively navigate to FirstApplication -&gt; app -&gt; src -&gt; main -&gt; 
+                          java -&gt; com.mycompany.firstapplication -&gt; HelloWorld.java
+                      </li></ul>
+		      <img src="/~cs110x/static/img/newLab3/image5.png" alt="image5" />
+              </li>
+    </ul>
+  </li>
+
+<h2 id="creating">Unit 3: Creating Android Projects</h2>
+  <li>Creating an Android Virtual machine.
+          <ul><li>Next, right click on the canvas (where the code is) and select <strong>Run 'HelloWorld'</strong> 
+                  or click the play button at the top of the screen. The program will then compile 
+                  and a pop up window will display after some time prompting to select a virtual machine.
+		  <img src="/~cs110x/static/img/newLab3/image6.png" alt="image6" />
+		  </li>
+              <li>Click the <strong>...</strong> to the right of the drop down box to create a virtual machine to run the
+                  program in that environment.<img src="/~cs110x/static/img/newLab3/image7.png" alt="image7" /></li>
+              <li>Select <strong>Create a virtual device</strong>. The user will be prompted to a new screen asking
+                  to select a category, select <strong>Phone</strong>. A list of phone models will appear to the 
+                  right of the screen select the <strong>Nexus 5</strong>. If the machine being used has 2GB or less 
+                  dedicated to the Virtual Machine, then choosing <strong>Nexus 4</strong>instead is recomended.
+		  <img src="/~cs110x/static/img/newLab3/image8.png" alt="image8" /></li>
+              <li>Next select the API that the VM Phone will run. Select the x86 appropriate to the machine being used. 
+                  X86_64 for 64 bit machines and x86 for 32 bit machines. Click Next and choose the latest version of 
+                  android <strong>Nougat</strong>. Click <strong>Download</strong><img src="/~cs110x/static/img/newLab3/image10.png" alt="image9" /></li>
+              <li>Once the desired version has been downloaded then click on the <strong>next</strong> button.
+		  <img src="/~cs110x/static/img/newLab3/image10.png" alt="image10" /></li>
+              <li>In the next step a screen will be presented to finalize the emulator. Leave the defaults values 
+                  selected and select <strong>finish</strong>. The virtual machine will then be created. This may 
+                  take a few moments, especially if the program is running on VMware. If the emulator is running
+                  really slow then using a physical android phone will be more convinient. Just hook up the
+                  device to the machine and choose the device from the connected devices instead choosing an emulator
+                  (There is a description few steps back on this topic).<img src="/~cs110x/static/img/newLab3/image11.png" alt="image11" /></li>
+              <li>When the VM is created the AVD Manager will appear. This is the screen where you can manage all the various virtual
+                  devices that have been created in order to test the android application. Choose the device and click <strong>Ok</strong>
+		  <img src="/~cs110x/static/img/newLab3/image13.png" alt="image12" /></li>
+              <li>At this point the system should boot up the VM and run the program that was just created.If 
+                  nothing happens close Android Studio and reopen it. Try to run the program again</li> 
+                  <ul><li>If one of the errors shown in the images below occurs try the following fixes
+		          <img src="/~cs110x/static/img/newLab3/image14.png" alt="image1" /><img src="/~cs110x/static/img/newLab3/image15.png" alt="image14" /></li>
+                      <li><strong>Linux Users:</strong> to fix shut down the Virtual Machine and click Edit 
+                          virtual machine settings -&gt; Processors. Click to enable Virtualize Intel <strong>VT-x/EPT</strong>
+                          or <strong>AMD-V/RVI</strong><img src="/~cs110x/static/img/newLab3/image16.png" alt="image15" /></li>
+                      <li>If the KVM issue occurs as seen in the image please follow the direction on this
+                          <a href="https://help.ubuntu.com/community/KVM/Installation" target="_blank">
+                          link</a></li> 
+                  </ul>
+              <li><strong>Not for Mac users</strong>
+                   <ul><li>If the error shown below occurs use this 
+			   <img src="/~cs110x/static/img/newLab3/image17.png" alt="image16" />
+			   <a href="http://stackoverflow.com/questions/21031903/how-to
+                           -fix-hax-is-not-working-and-emulator-runs-in-emulation-mode" target="_blank">stack overflow</a>
+                           to fix the issue. Seek help from tutors in case having difficulty.</li>
+                           <li>Sudo change the HAXM installation by setting the HAXM memory to be 1024MB. Unfortunately
+			       the only way to change the HAXM memory is by installing it again.
+			       <code>cd ~/Library/Android/sdk/extras/intel/Hardware_Accelerated_Execution_Manageri</br>
+			       OR</br>cd ~/Library/Developer/Xamarin/android-sdk-macosx/extras/intel/Hardware_Accelerated_Execution_Manager</code>
+			       </br>May need to change permission.</br><code>sudo chmod 755 "HAXM installation"</code></br>
+			       <code>sudo ./"HAXM installation" -m 1024</br> ./HAXM\ installation -m 1024</code></li>
+                           <li>Set Virtual Machine to match by going to tools menu -&gt; Android -&gt; AVD manager
+                               and then click on the pen image on the right end of the screen. Click on the advanced
+                               settings and chnage the virtual device size to be the same as HAXM memory limit.
+			       <img src="/~cs110x/static/img/newLab3/image18.png" alt="image18" /></li>
+		  </ul>
+              </li>
+	      <li>If using a windows machine and get the below error<img src="/~cs110x/static/img/newLab3/image19.png" alt="image19" />
+		<ul><li>Navigate to the SDK manager and check the intel x86 emulator and click install to begin the download</li>
+		    <li>Open the windows Run window by entering<strong>Windows + R</strong>. Then enter "cmd" into
+			this window and click ok.<img src="/~cs110x/static/img/newLab3/image20.png" alt="image20" /></li>
+		    <li>Now the Windows Command Prompt window should open. Navigate to the location of the SDK directory
+			<img src="/~cs110x/static/img/newLab3/image21.png" alt="image21" /></li>
+		    <li>In this directory go to extras -&gt; intel -&gt; Hardware_Accelerated_Execution_Manager and run the
+			file named "intelhaxm-android.exe".<img src="/~cs110x/static/img/newLab3/image22.png" alt="image22" /></li> 
+		    <li>Once the execution manager window pops up, select 2.0 GB as the amount of RAM to allow intel HAXM to use.</li>
+		    <li>Now restart the Android Studio and then try to start the AVD again</li>
+		</ul>
+	      </li>
+	      <li>Device should load up your application and run the <strong>First Application</strong> application
+                  <ul><li>If for some reason the "Hello World!" is not being displayed right away, click run a second time  and that will reload
+			  the application.</li>
+		  </ul><img src="/~cs110x/static/img/newLab3/image23.png" alt="image23" />
+	      </li>
+          </ul>
+	<h1 id="check-point----">â€” <strong>In Progress Check</strong> â€”</h1>
+
+	<li>When you are able to run the <strong>First Application</strong> application on emulator or your phone, add a ticket to 
+	    the Autograder queue with one tag for the priority of your ticket and another with in progress check status. Bring up 
+	    your lab reserevation time in cse110.com for the staff member to verify. Select your lab reservartion time correctly 
+	    otherwise you will earn a professionalism deduction. A member of the staff will verify that you have completed the 
+	    <strong>First Application</strong> application along with your lab reservation time</li>
+<hr/>
+<h2 id="unit4">Unit 4: More Complicated Application</h2>
+	<li>Now you will be creating a second application that does a little more than just printing "Hello World!"
+		<ul><li>Start by creating a new project by going to <strong>File -&gt; New -&gt; New Projects</strong>.</li>
+		    <li>Name the project <strong>Simple Calculator</strong>.<img src="/~cs110x/static/img/newLab3/image23.1.png" alt="image23.1" /></li>
+		    <li>In the next screen enable <strong>the Phone and Tablet</strong> and choose the <strong>API 15</strong> from the drop down menu.
+				<ul><li>This option allows you to pick what versions of Android OS your application will support.
+				    API 15 supports 97.3% of Android users so it is a good place to start. <strong>API 24</strong> is the current
+				    version(Nougat).<img src="/~cs110x/static/img/newLab3/image24.1.png" alt="image24.1" /></li>
+				</ul>
+		    </li>
+		    <li>Next select a blank activity.<img src="/~cs110x/static/img/newLab3/image24.png" alt="image24" /></li>
+		    <li>Keep the default names and click finish.<img src="/~cs110x/static/img/newLab3/image25.png" alt="image25" /></li>
+		    <li>Now the project should be loaded to see a more complete view of an Android project. Select <strong>Android</strong>
+			in the upper left hand corner, a drop down menu should appear. Select <strong>Project</strong> this will change to
+			project view.<img src="/~cs110x/static/img/newLab3/image26.png" alt="image26" />
+		    </li>
+		    <li>Now open <strong>SimpleCalculator -&gt; app -&gt; src -&gt; main -&gt; java -&gt; (package name) -&gt; MainActivity
+			</strong> from the panel on the left side of the IDE.
+				 <ul><li>This is your actvities main class, which is very similar to java's main. When the application is run, this is
+				     the code that starts your app.<img src="/~cs110x/static/img/newLab3/image27.9.png" alt="image27" /></li></ul></li>
+		    <li>The next few bullets will demonstrate how Androd controls it's visual layer or View.
+			<ul>
+		    	<li>From the left side panel open <strong>res -&gt; layout</strong>.<img src="/~cs110x/static/img/newLab3/image28.png" alt="image28" /></li>
+			<li>Under the <strong>layout</strong> subdirectory you will see two files <strong>activity_main.xml</strong> and <strong>content_main.xml</strong>
+			    .These two files control the default layout for your activity. <strong>activity_main.xml</strong> contains the
+			    starter code for your application and at the bottom links in the <strong>content_main.xml</strong>. <strong>content_main.xml</strong> is
+			    where we will be adding content to update how our application looks.
+			    <li>First remove some irelavant code from the <strong>activity_main.xml</strong>. Double click and open the <strong>activity_main.xml</strong>
+				. You should see the below screen.<img src="/~cs110x/static/img/newLab3/image28.1.png" alt="image28.1" /></li>
+			    <li>Click on the <strong>Text</strong> tab in the bottom right corner, next to <strong>Design</strong> tab. Now delete the
+				<strong>FloatingActionButton</strong> as seen in the highlighted code in the image below. This will remove the extra email button that
+				can be seen in the above image.<img src="/~cs110x/static/img/newLab3/image28.2.png" alt="image28.2" />
+				<ul><li>In Android Studio you can edit .xml or design code in either design mode or text mode. Text mode is more powerful in the sense
+				    that it gives you the full power of xml but design allows for a drag and drop interface which is convenient for simple tasks.</li>
+				</ul>
+			    </li>
+			</li></ul>
+		    </li>
+		    <li>Now open <strong>content_main.xml</strong>. By default the layout has been set to a <strong>Relative Layout</strong> which
+			allows you to position items relative to other items on the screen. Change that to <strong>Linear Layout</strong> which
+			stacks elements lineraly. This will be simpler to write for our purpose.
+			<ul><li>Currently your <strong>content_main.xml</strong> looks like the image below. Change the <strong>RelativeLayout</strong> 
+			    to <strong>LinearLayout</strong>.<img src="/~cs110x/static/img/newLab3/image29.png" alt="image29" /></li>
+			<li>Once you make the changes in the opening and closing tags click back to the <strong>Design</strong> tab.</li>
+			</ul>
+		    </li>
+		    <li>Now look to the upper right hand corner of the screen and you will see a <strong>Component Tree</strong> view that outlines
+			all the elements currently in your view.<img src="/~cs110x/static/img/newLab3/image30.png" alt="image30" />			
+			<ul><li>When you select a component in the tree it will highlight it on the virtual phone. Use this to delete the <strong>TextView</strong>
+			    containing <strong>Hello World</strong><img src="/~cs110x/static/img/newLab3/image31.png" alt="image31" /></li>
+			</ul>
+		    </li>
+<h2 id="unti5">Unit 5: Designing the Interface</h2>
+		    <li>Now you will be using the Design mode to set up the layout for our calculator!
+			<ul><li>Start by clicking the background inside the <strong>Properties</strong> section on the right hand side.
+			    Click the <strong>...</strong>to get a color wheel displayed. Select the background color for your calculator.
+			    <img src="/~cs110x/static/img/newLab3/image31.1.png" alt="image31" /></li>
+			<li>Now add a <strong>TextView</strong> to display the applications title. On the left hand toolbar select <strong>Large Text</strong> and drag it onto 
+			    the phone screen.<img src="/~cs110x/static/img/newLab3/image32.png" alt="image32" /></li>
+			<li>When you drag you will notice that there is only one place you can put the item on the screen. This is because 
+			    you are using a <strong>Linear Layout</strong> which either stacks items horizontally or vertically.
+			    <li>Now if you double click on the item you can change the displayed text. Change it to <strong>Simple Calculator</strong>. 
+			        The second field id is the name of the element. This is used to identify the <strong>TextView</strong> inside the 
+				application itself. Change id to <strong>title</strong>.<img src="/~cs110x/static/img/newLab3/image33.png" alt="image33" /></li>
+			    <li>Now center the text.
+				<ul><li>First you need to change the <strong>layout:width</strong> property to <strong>match_parent</strong> this will 
+				    cause the text element's width to match the parent which in this case is the <strong>LinearLayout</strong>. Causing 
+				    it to span the entire screen.<img src="/~cs110x/static/img/newLab3/image34.png" alt="image34"/>
+				    <img src="/~cs110x/static/img/newLab3/image35.png" alt="image35"/></li>		
+				<li>Now that the element spans the entire horizontal space you need to center it inside the space. Under <strong>Properties</strong> 
+				    scroll down to <strong>gravity</strong>, click the triangular drop down and select <strong>center_horizontal</strong>.
+				    <img src="/~cs110x/static/img/newLab3/image36.png" alt="image36"/></li>
+				</ul>
+			    </li>
+			    <li>Now you need to add two fields for the number inputs.
+				<ul><li>First you need to make sure elements inside the LinearLayout Stack are vertical. To do this Click on the <strong>LinearLayout 
+				    </strong> inside the <strong>Component Tree</strong> and change the orientation field inside <strong>Properties</strong> 
+				    to <strong>vertical</strong>.<img src="/~cs110x/static/img/newLab3/image37.png" alt="image37"/></li>
+				<li>Next add two <strong>Plain Text</strong> elements from the <strong>Text</strong> fields area under the left hand toolbar. 
+				    The screen should look like the one below when done.<img src="/~cs110x/static/img/newLab3/image38.png" alt="image38"/></li>
+				<li>Edit the id of both new <strong>editText</strong> and <strong>editText2</strong> to read <strong>input1</strong> and 
+				    <strong>input2</strong>.<img src="/~cs110x/static/img/newLab3/image39.png" alt="image39"/></li>
+				<li>Finally set the input type so that the inputs entered in by the user are only decimal.
+				    <ul><li>Go to <strong>Properties -&gt; InputType -&gt; numberDecimal</strong> and check this option. Checking this will 
+					restrict users to only inputting numbers and will display the number pad when an input is clicked.
+					<img src="/~cs110x/static/img/newLab3/image40.png" alt="image40"/>
+					<img src="/~cs110x/static/img/newLab3/image41.png" alt="image41"/></li>
+				    </ul>
+				</li>
+				</ul>
+			    </li>
+			    <li>Next add the basic math buttons.
+				<ul>
+				<li>Insert a <strong>LinearLayout Horizontal</strong> below the 2 inputs. Next drag 5 <strong>Small Button</strong> items 
+				    into the new <strong>LinearLayout</strong> and the result should look like the below image.
+				    <img src="/~cs110x/static/img/newLab3/image42.png" alt="image42"/></li>
+				<li>Now name the buttons you created. For Text field of <strong>Button</strong> enter <strong>+</strong> and for 
+				    <strong>Id</strong> field enter <strong>plus</strong> for <strong>Button2</strong> enter <strong>-</strong> and 
+				    <strong>minus</strong> for Text and Id fields respectively. For <strong>Button3</strong> enter <strong>*</strong> and 
+                                    <strong>multiply</strong> for Text and Id fields respectively. For <strong>Button4</strong> enter <strong>/</strong> and 
+                                    <strong>divide</strong> for Text and Id fields respectively and for <strong>Button5</strong> enter <strong>CLR</strong> and 
+                                    <strong>clear</strong> for Text and Id fields respectively.<img src="/~cs110x/static/img/newLab3/image42.1.png" alt="image42"/></li> 
+				<li>See if you can figure out how to center the buttons. To give you a hint, it is a property of the parent's layout.</li>
+				<li>Finally make sure your <strong>Horizontal LinearLayout</strong> has the following properties before moving on.</li>
+					<ul><li>Note that you can drag an object between the linear layouts by clicking and holding the object.</li></ul>
+				</ul>
+			    </li>
+			    <li>Now you need to add space to display the final results
+				<ul><li>Add a <strong>LinearLayout Vertical</strong> below <strong>LinearLaytout Horizontal</strong> Then add two plain
+				    <strong>Plain TextView</strong> items below that. Make sure that for the <strong>LinearLayout</strong> that you just
+				    added, <strong>layout:width and layout:height</strong> matches the parent. The result should look like the image below.</li>
+				    <li>Experiment with the text size and style inside the <strong>Properties</strong> toolbar for both text views but
+					give them the id's <strong>result_title</strong> and <strong>result</strong>
+					<img src="/~cs110x/static/img/newLab3/image43.png" alt="image43"/></li>
+			    </li>
+			</li>
+			</ul>
+		    </li>
+		    <li>Open <strong>MainActivity</strong> to link the functionality of the calculator to the simple design you implemented above.
+			<ul><li>Start by deleting the hightlighted code shown below. This code implements the <strong>FloatingActionButton</strong>
+				you deleted from your <strong>activity_main.xml</strong>.<img src="/~cs110x/static/img/newLab3/image43.1.png" alt="image43.1" /></li>
+			    <li>When you generated your blank activity, Android Studio created a lot of starter code for you. One of these methods
+				is <strong>onCreate</strong> method; this method is called when the activity or application starts up. This is
+				what links your Design code or <strong>View</Strong> from your functional code or <strong>Controller</strong>
+				<ul><li>This process starts with the line <code>setContentView(R.layout.activity_main);</code></br>This will link the application's
+				    <strong>MainActivity</strong> to the application's <strong>actvity_main</strong> and <strong>content_main</strong>.</li></ul>
+			    </li>
+			    <li>Create the following fields above the <strong>onCreate</strong> method. These fields are the instances of the objects that
+				help you to control your application's layout.</br>
+				    <code>private EditText operand1;</code></br> <code>private EditText operand2;</code></br> <code>private Button btnAddition;</code></br>
+				    <code>private Button btnSubtraction;</code></br> <code>private Button btnDivision;</code></br> <code>private Button btnMultiplication;</code></br>
+				    <code>private TextView txtResult;</code></br> <code>private Button btnClear;</code></br>
+				<ul><li>If there are any errors like the one below you can click on the line where error is occuring and use <strong>
+				    alt+ctrl</strong> to import the necessary library for any of the objects you created.
+				    <img src="/~cs110x/static/img/newLab3/image44.png" alt="image44"/></li></ul>
+			    </li>
+			    <li>Under <strong>setContentView(R.layout.activity_main);</strong> add the following lines of code where each of thsese
+				lines will link an element from the content_main.xml to one of the fields that you just created above. This is
+				achieved by using the <strong>findViewBy()</strong> function which you can use to look up ids you assigned inside
+				<strong>content_main.xml</strong></br>
+				<code>operand1 = (EditText) findViewById(R.id.input1);</code></br> <code>operand2 = (EditText) findViewById(R.id.input2);</code></br> 
+				<code>btnAddition = (Button) findViewById(R.id.plus);</code></br> <code>btnSubtraction = (Button) findViewById(R.id.minus);</code></br>
+				<code>btnDivision = (Button) findViewById(R.id.divide);</code></br> <code>btnMultiplication = (Button) findViewById(R.id.multiply);</code></br>
+				<code>txtResult = (TextView) findViewById(R.id.result);</code></br> <code>btnClear = (Button) findViewById(R.id.clear);</code>
+				<img src="/~cs110x/static/img/newLab3/image45.png" alt="image45"/>
+			    </li>
+			    <li>Now you need to set up listeners for the buttons you created for the <strong>View</strong> of your application. Listeners
+				will take responds from users and connect the requests to the controller of your application so the application can
+				perform the requested function. For this application you will use simple <strong>onClickListeners</strong>. They detect
+				when one of the buttons is clicked by the user. Android has a variety of built in listeners for things such as swipes,
+				taps, and more.The "listener" or "observer" pattern is the most common strategy for creating asynchronous callbacks 
+				within Android development. Listeners are used for any type of asynchronous event in order to implement the code to 
+				run when an event occurs. You could read more about listeners here.
+				<a href="https://developer.android.com/guide/topics/ui/ui-events.html" target="_blank">Link to listeners</a> 
+				<ul><li>You need to setup the <strong>setOnClicker</strong> like shown below. <strong>setOnClickListener</strong> 
+					is a method of the <strong>Button</strong> object in Android. This generates a new View and Override its 
+					<strong>onClick</strong> method.</li>
+				    <li>Now when the button is clicked, the code inside <strong>onClick</strong> is run which in this case, takes the input 
+					the user has placed in both <strong>input1</strong> and <strong>input2</strong> TextViews and stores them as doubles. 
+					The addition operation is performed and then the <strong>result</strong> TextView is updated to display the results 
+					to the user. Else if the inputs are not valid a popup prompting the user to enter a valid input is displayed.</li>
+				    <li>Place the following code at the bottom of the <strong>onCreate()</strong> method.
+				    <pre>btnAddition.setOnClickListener(new View.OnClickListener(){
+						@Override
+						public void onClick(View v){
+							if ((operand1.getText().length() &gt; 0) && (operand2.getText().length() &gt; 0 )){
+								double oper1 = Double.parseDouble(operand1.getText().toString());
+								double oper2 = Double.parseDouble(operand2.getText().toString());
+								double theResult = oper1 + oper2;
+								txtResult.setText(Double.toString(theResult));
+							}
+							else{
+								Toast.makeText(MainActivity.this, "Please enter number in both operand fields", Toast.LENGTH_LONG).show();
+							}
+						}
+					});
+				    </pre>
+					<img src="/~cs110x/static/img/newLab3/image45.1.png" alt="image45.1"/>
+				</ul>
+			    </li>
+			    <li>
+				Now implement the subtraction, multiplication, division functionalities of your application following similar
+				process as addition that you followed above.Ensure to name the <strong>btn</strong> according to its functionality.
+				For example for division the button is called <strong>btnDivision</strong>.
+			    </li>
+			    <li>
+				At last you need to setup the clear button which will reset the inputs and the result display. Add the following
+				code after your button code that you added in the <strong>onCreate()</strong> method.
+				<pre>btnClear.setOnClickListener(new View.OnClickListener(){
+                                     	@Override
+                       			public void onClick(View v){
+							operand1.setText("");
+							operand2.setText("");
+							txtResult.setText("0.00");
+							operand1.requestFocus();
+                                                }
+                                     });
+                                    </pre>
+			    </li>
+			    <li>Now test your application. In the upper right hand corner click on the play button.
+				<img src="/~cs110x/static/img/newLab3/image45.2.png" alt="image45.2"/>
+				<ul><li>A window like below will pop-up. Choose the <strong>Launch emulator</strong> and click
+					<strong>OK</strong> and this will launch the emulator for you.
+					<img src="/~cs110x/static/img/newLab3/image46.png" alt="image46"/></li>
+				    <li>Once the emulator is launched you should see the following. 
+					<img src="/~cs110x/static/img/newLab3/image47.png" alt="image47"/></li>
+				</ul>
+			    <li>Great!! you have built some functional apps in Android. This might be a great start to more interesting adventures for you.</li>
+			</ul>
+		    </li>
+		</ul>
+	</li>
+     	
+
+  </li>
+</ul>
+
+<hr />
+<h1 id="completion----"> --<strong>Completion Check</strong>--</h1>
+<p>When you reach the screen shown in image above, add a ticket to the Autograder queue with one tag for the priority of your
+   ticket and another with lab completion check tag so a member of the staff will help you. However bear
+   in mind that you will only get checkoff prioirty during your own lab reservation time. During any other
+   CSE 110 lab hour your checkoff request will be considered only if there are staff members who are not
+   helping students from that lab hour.Select your lab reservartion time correctly otherwise you will earn a 
+   professionalism deduction</p>
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script type="text/javascript" src="/~cs110x//static/js/script.js"></script>
+  </body>
+</html>
++ÏHŠ»±      X‰ bX‰ t=^D¾X‰!Î   :    :http://ieng6.ucsd.edu/~cs110x/static/labs/lab3/index.html necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Wed, 25 Jan 2017 22:02:13 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Wed, 25 Jan 2017 21:01:25 GMT
+Etag: "5a707b1-8824-891d1340"
+Accept-Ranges: bytes
+Content-Length: 34852
+Content-Type: text/html
+ original-response-headers Date: Wed, 25 Jan 2017 22:02:13 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Wed, 25 Jan 2017 21:01:25 GMT
+Etag: "5a707b1-8824-891d1340"
+Accept-Ranges: bytes
+Content-Length: 34852
+Connection: close
+Content-Type: text/html
+ charset windows-1252 uncompressed-len 0 predictor::resource-count 59 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/poole.css 1,1,1485381730,4096 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/syntax.css 1,1,1485381730,4096 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/lanyon.css 1,1,1485381730,4096 predictor::http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400 1,1,1485381730,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image1.15.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image2.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image3.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image4.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image5.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image6.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image7.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image8.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image10.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image11.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image13.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image14.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image15.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image16.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image17.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image18.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image19.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image20.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image21.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image22.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image23.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image23.1.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image24.1.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image24.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image25.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image26.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image27.9.png 1,1,1485381730,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image28.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image28.1.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image28.2.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image29.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image30.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image31.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image31.1.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image32.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image33.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image34.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image35.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image36.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image37.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image38.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image39.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image40.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image41.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image42.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image42.1.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image43.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image43.1.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image44.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image45.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image45.1.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image45.2.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image46.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/newLab3/image47.png 1,1,1485381730,4097 predictor::http://ieng6.ucsd.edu/~cs110x//static/js/script.js 1,1,1485381730,4097   ˆ$

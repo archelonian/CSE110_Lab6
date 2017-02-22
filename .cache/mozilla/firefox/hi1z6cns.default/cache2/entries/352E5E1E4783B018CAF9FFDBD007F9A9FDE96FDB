@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Lab 6 &middot; CSE 110 Software Engineering
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/~cs110x/public/css/poole.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/syntax.css">
+  <link rel="stylesheet" href="/~cs110x/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/~cs110x/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/~cs110x/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Course Website for CSE110, Winter Quarter 2017</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/~cs110x/">Home</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/labs/">Labs</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/lectures_a00/">Lecture Notes</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/logistics_a00/">Logistics</a>
+    <a class="sidebar-nav-item active" href="/~cs110x/static/professionalism/">Professionalism</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/resources/">Resources</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/artifacts/">Artifacts</a>
+    <a class="sidebar-nav-item" href="/~cs110x/static/syllabus/">Syllabus</a>
+    <!-- <a class="sidebar-nav-item" href="">Weekly TODO</a> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="http://ieng6.ucsd.edu/~cs110x/" title="Home">CSE 110 Software Engineering</a>
+            <small>Inc.</small>
+          </h3>
+        </div>
+      </div>
+
+
+      <div class="container content" id='instructions'>
+        <h1 id="intellij-setup--introduction-to-junit-testing">IntelliJ Setup &amp; Introduction to Travis CI</h1>
+
+<h2 id="intellij-lab"> IntelliJ &amp Travis CI lab</h2>
+<ul>
+  <li>This lab will present one of the most popular IDEs for web development called IntelliJ. 
+      In the third part of the lab, you will have the opportunity to learn about Travis CI which
+	is a hosted, distributed continuous integration service that is being used to build and
+	test programming projects hosted on GitHub.</li><br>
+  <li>  
+    Why learn about Travis CI?  When working in industry, many companies rely on automation to repeatedly verify
+    developer changes, integrating those changes into the code baseline, building and deploying the entire software
+    package, and performing unit and functional testing. Getting familiar with continuous integration will prepare
+    you for your future as a professional software engineer. Travis is highly customizable in a sense that you can
+    choose which notifications to receive and when to test the code. This lab will walk through a setup and use of
+    Travis CI for a small project provided below in a hands-on way to see how it notifies you when there are
+    problems and when all is well.
+  </li><br>	
+</ul>
+
+
+<!--
+<p><strong>Dependencies:</strong></p>
+<ul>
+  <li>Each pair of students needs a personal laptop.</li>
+  <li>
+    Open up the VM that you prevsiously created.
+  </li>
+  <li>
+    Open a Terminal window.
+  </li>
+  <li><p>Type the following command to ensure you are located at the home directory:</p>
+      <ul>
+	<li>cd~/</li>
+      </ul>
+  </li>
+   <li><p> Type the following to update the package index:</p>
+    <ul>
+      <li><code>sudo apt-get update</code>
+      </li>
+    </ul>
+    <img src="/~cs110x/static/img/lab4/get_update.png" alt="image1" />      
+   </li>
+   <li><p> Now check if Java has been installed by typing the command: </p>
+    <ul>
+      <li><code>java -version</code>
+      </li>
+    </ul>
+    <img src="/~cs110x/static/img/lab4/java-vers-no.png" alt="image2" />      
+   </li>
+   <li><p> If no Java version is found, install the JRE (Java Runtime Environment) by typing the following command: </p>
+    <ul>
+      <li><code>sudo apt-get install default-jre</code>
+	   <ul type="circle">
+             <li>Type "yes" at the prompt.</li>
+	   </ul>
+      </li>
+      
+    </ul>
+    <img src="/~cs110x/static/img/lab4/install-JRE.png" alt="image3" />      
+   </li>
+   <li><p>Now install the JDK(Java Development Kit) by typing the following command: </p>
+    <ul>
+      <li>
+         <code>sudo apt-get install default-jdk</code>
+	   <ul type="circle">
+             <li>Type "yes" at the prompt.</li>
+	   </ul>
+      </li>
+      
+    </ul>
+    <img src="/~cs110x/static/img/lab4/install-JDK.png" alt="image4" />      
+   </li>
+   <li><p>Now check to insure that java is installed by typing the following command:</p>
+    <ul>
+      <li><code>java -version</code>
+      </li>
+      
+    </ul>
+    <img src="/~cs110x/static/img/lab4/java-vers-yes.png" alt="image5" />      
+   </li>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="install-intellij">Install IntelliJ</h2>
+
+<ul>
+  <li>Visit the link below to  get a student account for IntelliJ:</li>
+  	<ul><li><a href="https://www.jetbrains.com/student/">Jetbrains Student</a></li>
+	</ul>
+  <li>Click <b>Apply Now</b> and then fill in the information using unique ucsd email address like you used for lab1.</li>
+<img src="/~cs110x/static/img/lab4/applynow.png" alt="image1" /></li>
+<hr size="5"color="black">
+  <li>Check UCSD email account for the following email:<br />
+<img src="/~cs110x/static/img/lab4/emailconf.png" alt="image1" /></li>
+<hr size="5"color="black">
+  <li>Follow the prompts to create an account and then download IntelliJ.<br />
+<img src="/~cs110x/static/img/lab4/license.png" alt="image2" /></li>
+<hr size="5"color="black">
+  <li>Different versions exist for Windows macOS and Linux. Download the Ultimate Version appropriate for the machine that is being downloaded for.<br />
+<img src="/~cs110x/static/img/lab4/download.png" alt="image3" /></li>
+<hr size="5"color="black">
+  <li>
+<img src="/~cs110x/static/img/lab4/thankyou.png" alt="image4" /></li>
+<hr size="5"color="black">
+  <li>Save the file to your download folder.<br />
+<img src="/~cs110x/static/img/lab4/save.png" alt="image5" /></li>
+<hr size="5"color="black">
+  <li>Create a file in your home directory:<br />
+    <pre><code>
+    cd ~/
+    mkdir IntelliJ
+    cd IntelliJ
+    </code></pre>
+  <li>Copy the IntelliJ.tar.gz to IntelliJ directory. Note that the actual filename may be different than the command listed below and will depend upon the version of IDEA IntelliJ that you currently have saved in Downloads folder.</br>
+    <pre><code>
+    cp ~/Downloads/ideaIU-2016.1.1.tar.gz .
+    ls 
+    tar xfz ideaIU-2016.1.1.tar.gz
+    cd idea-IU-143.2287.1/
+    cd bin/
+    ./idea.sh
+    </code></pre>
+  </li>
+<img src="/~cs110x/static/img/lab4/ls.png" alt="image_new1" /></li>
+<hr size="5"color="black">
+  <li>Do not import any settings at the first prompt, you will now have to complete a set of default configurations for IntelliJ but these can be changed at a later time.</li> 
+<img src="/~cs110x/static/img/lab4/complete.png" alt="image6" /></li>
+<hr size="5"color="black">
+  <li>Enter the user name and password you created with the IntelliJ student account:<br />
+<img src="/~cs110x/static/img/lab4/activate.png" alt="image7" /></li>
+  <li>Select a UI theme and click <strong>Next: Default Plugins</strong>.<br />
+<img src="/~cs110x/static/img/lab6/image8.png" alt="image8" /></li>
+  <li>Leave all plugins to their default settings and click <strong>Next: Featured Plugins</strong>.<br />
+<img src="/~cs110x/static/img/lab6/image9.png" alt="image9" /></li>
+  <li>At featured plugins page if you would like IntelliJ to have movement capabilities like Vim, install the <strong>IdeaVIM</strong> plugin.</li>
+  <li>Then click <strong>Start Using IntelliJ</strong>.<br />
+<img src="/~cs110x/static/img/lab6/image10.png" alt="image10" /></li>
+</ul>
+
+<hr />
+
+<h2 id="installing-the-java-sdk">Installing the Java SDK</h2>
+<ul>
+  <li>Next you will need to download the Java SDK for your operating system:</li>
+  <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SDK</a><br />
+<img src="/~cs110x/static/img/lab6/image11.png" alt="image11" /></li>
+  <li>Take note of where the file is being saved.<br />
+<img src="/~cs110x/static/img/lab6/image12.png" alt="image12" /></li>
+  <li>Now open up the IntelliJ IDE again and Click Create New Project.<br />
+<img src="/~cs110x/static/img/lab4/intellij.png" alt="image13" /></li>
+  <li>On the New Project under Project SDK click <strong>New</strong>. </li>
+  <li>Then find where the Java SDK is installed on your machine and select the jdk file and click <strong>OK</strong> and then click <strong>Next</strong> .<br />
+<img src="/~cs110x/static/img/lab4/findJDK.png" alt="image14" /></li>
+  <li>On the next screen select <strong>Create project from template</strong>.</li>
+  <li>Then select <strong>Java Hello World</strong> template option.<br />
+<img src="/~cs110x/static/img/lab4/simple.png" alt="image15" /></li>
+  <li>Name the Project HelloWorld and click <strong>Next</strong>.</li>
+  <li>Now  you should see the page presented in the image below.</li>
+  <li>Right click canvas inside the project and select <strong>Run Main</strong>.</li>
+  <li>You should see the text "Hello World" display in a rectangular box below the code.<br />
+<img src="/~cs110x/static/img/lab4/HelloWorld.png" alt="image16" /></li>
+  <li>Now you are ready to create Java Programs in IntelliJ.</li>
+</ul>
+-->
+<hr />
+<h2 id="part-0">Part 0: Pre-Lab:</h2>
+<ul>
+  <li>
+    Make sure you have completed the <a href="http://ieng6.ucsd.edu/~cs110x/static/labs/labs/lab6/index1.html">Pre-Lab</a> section befor you go to Part 1 of this lab. 
+  </li>
+  <li>
+If you had difficulties with lab 3 running intellij in the VM, uninstalled intellij, or both, then when you prepare for this lab you should install intellij on your host machine. You will have to use an installation process based on your OS, but it should not be too much different from prelab 3.
+</li>
+</ul>
+<h2 id="part-1-introduction-to-intellij-use">Part 1: Introduction To IntelliJ Use</h2>
+
+<ul>
+  <li>Create a Project:
+    <ol>
+      <li>Go to <strong>File-&gt;New Project</strong>.</li>
+      </li>Your java SDK should be selected by default on the dropdown at the top, labelled <strong>Project SDK</strong>, then click <strong>Next</strong>.<br />
+<img src="/~cs110x/static/img/lab6/newProject.png" alt="image17" /></li>
+      <li>If Java is not selected by default, click <strong>New</strong> next to <strong>Project SDK</strong>.
+	  <img src="/~cs110x/static/img/lab6/newJDK.png" alt="newimage2" />
+          <ol>Select <strong>JDK</strong>, then in the new box choose the <strong>JDK</strong> directory (Where JDK is installed).</ol>
+	  <img src="/~cs110x/static/img/lab6/chooseDirectory.png" alt="newimage3" />
+      </li>
+      <li>Click <strong>Next</strong>  through the following screen displaying templates. <br />
+<img src="/~cs110x/static/img/lab6/template.png" alt="newimage4" /></li>
+      <li>Choose a project name and do not change the Project Location field and click on <strong>Finish</strong> button. <br />
+<img src="/~cs110x/static/img/lab6/projectName.png" alt="image18" /></li>
+      
+      <li>Right click on the <strong>src</strong> folder (If the tab with the project files is not open press <code>alt+1</code>, or select the dropdown near the top left with the down arrow, and then open the project folder to find the src folder) and select <code>New-&gt;Package</code>. This will bring up a naming prompt, name your new package <code>edu.ucsd.cs110.temperature</code>.</li>
+    </ol>
+  </li>
+  <li>Creating Java Classes:
+    <ol>
+      <li>Create a new class by right clicking the new package <code>edu.ucsd.cs110.temperature</code>.</li>
+      <li>Select the <code>New-&gt;Java Class</code>. Name the new class <code>Temperature</code>.</li>
+      <li>Fill in the body with the code below.</li>
+    </ol>
+        <pre><code class="language-java">package edu.ucsd.cs110.temperature;
+        public abstract class Temperature {
+          public Temperature(float v)
+          { 
+                value = v;
+          }
+          public final float getValue()
+          {
+                return value;
+          }
+          public abstract Temperature toCelsius();
+          public abstract Temperature toFahrenheit();
+        }
+        </code></pre>
+  </li>
+</ul>
+
+
+<ol>
+  <li>Notice that there are quite a few errors displayed, the variable value is 
+      underlined in red, as it is probably undeclared. To see if it is declared, right click
+      on the variable <strong>value</strong> and select <code>Go To-&gt;Declaration.</code> 
+      Since it is not declared, it prompts you that it cannot find declaration to go to. You will 
+      also see a small red lightbulb appear on that line. Clicking the <strong>ligthbulb</strong> 
+      reveals the text box, select the <strong>Create field 'value'</strong> option to create
+      the field, then select <strong>float</strong> as its type.</li>
+
+
+<p><img src="/~cs110x/static/img/lab6/createField.png" alt="image19" /></p>
+
+  <li>Now you should look at the class declaration public abstract class Temperature.
+      The abstract keyword here is a simple implementation of a concept called Inheritance.
+      Inheritance is an Object Oriented Design theme in which you create one superclass 
+      (Temperature in this case) and you create multiple subclasses that inherit from, or extend
+      the functionality of the superclass. When you declare Temperature to abstract, what you are 
+      saying is that you want to use this class as a framework for other classes, and
+      as a result you do not ever want to instantiate a Temperature object by calling new Temperature(value).
+      This concept is not to be confused with declaration, which looks like this: <code> Temperature temp;</code> . Declaration
+      simply means that you want a variable to be of type Temperature, and that when you instantiate it you
+      should use a class that inherits from, or extends the Temperature class. Lets look into inheritance some 
+      more by adding subclasses for Temperature. Create two new classes, Fahrenheit and Celsius and copy the 
+      code below into each of the respective classes.</li>
+</ol>
+
+<ul>
+  <li>Fahrenheit:
+  <pre><code>package edu.ucsd.cs110.temperature;
+  public class Fahrenheit extends Temperature
+  {
+      public Fahrenheit(float t)
+      {
+          super(t);
+      }
+      public String toString()
+      {
+          // TODO: Complete this method
+          return "";
+      }
+  }
+
+</code></pre>
+  
+  </li>
+</ul>
+
+
+
+<ul>
+  <li>Celsius:
+  
+  <pre><code>package edu.ucsd.cs110.temperature;
+
+  public class Celsius extends Temperature
+  {
+      public Celsius(float t)
+      {
+          super(t);
+      }
+      public String toString()
+      {
+          // TODO: Complete this method
+          return "";
+      }
+  }
+  </code></pre>
+  </li>
+</ul>
+
+
+<ul>
+  <li>You should notice errors in both of these classes. If you hover over the name of each class, the error 
+      message should tell you that the class needs to extend the abstract methods in Temperature. If you go
+      to the Temperature class you can see the two abstract methods, <code>toCelsius()</code> and <code>toFahrenheit()</code>.
+      There are two things you should notice about these methods, they both have the keyword <code>abstract</code>
+      in their declaration, and they both do not have a function body. This is because you cannot call these functions directly,
+      you must create an implementation in a subclass that will inherit the abstract.
+      Click on the line containing the error and a red light bulb appears. Click the <strong>lightbulb</strong> and select <strong>Implement Methods</strong>.<br />
+<img src="/~cs110x/static/img/lab6/Implement.png" alt="image20" /></li>
+  <li>A pop up Box will appear, keep the default values.<br />
+<img src="/~cs110x/static/img/lab6/add.png" alt="image21" /></li>
+  <li>Apply the above steps for both classes.</li>
+  <li>
+    <p>Save your work by pressing CTRL+S.</p>
+  </li>
+  <li>Create a new Java class to convert between temperatures. Select package 
+      <strong>cs110.temperature-&gt;New-&gt;Java Class</strong>. Name the class <code>TemperatureConverter</code>.<br />
+Add the following main method inside the class body:</li>
+</ul>
+
+<pre><code>package edu.ucsd.cs110.temperature;
+
+public class TemperatureConverter {
+
+    public static void main(String args[]) throws IOException
+    {
+        String input = null;
+        Temperature inputTemp = null, outputTemp = null;
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        while(true)
+        {
+            System.out.println("\nAvailable units: C, F");
+
+            System.out.print("Enter temperature to convert (i.e. 36.8 C, 451 F): ");
+            if((input = reader.readLine()) == null) System.exit(0);
+            String[] temp_in = input.split(" ");
+            float temp_val = Float.parseFloat(temp_in[0]);
+
+            switch(temp_in[1].toLowerCase().charAt(0))
+            {
+                case 'c':
+                    inputTemp = new Temperature(temp_val);
+                    break;
+                case 'f':
+                    inputTemp = new Temperature(temp_val);
+                    break;
+                default:
+                    System.out.println("Invalid entry!!\n\n");
+                    continue;
+            }
+
+            System.out.print("Enter the unit to convert TO: ");
+            if((input = reader.readLine()) == null) System.exit(0);
+
+            switch(input.toLowerCase().charAt(0))
+            {
+                case 'c':
+                    outputTemp = inputTemp.toCelsius();
+                    break;
+                case 'f':
+                    outputTemp = inputTemp.toFahrenheit();
+                    break;
+                default:
+                    System.out.println("Invalid entry!!\n\n");
+                    continue;
+            }
+
+            System.out.println("\n The converted temperature is " + outputTemp.toString() +"\n\n");
+        }
+    }
+}
+</code></pre>
+
+<ul>
+  <li>
+    <p>IntelliJ will likely complain that it cannot resolve BufferedReader, InputStreamReader, and IOException. To resolve these click over the underlined word, an option will appear prompting you to press ALT+Enter to import the classes in order to resolve this exception. Do this for all such exceptions.<br />
+<img src="/~cs110x/static/img/lab6/Import.png" alt="image22" /></p>
+  </li>
+  <li>
+    <p>One more error should remain. Remember you have to instantiate subclasses in place of super classes?
+       Lets try that by changing Temperature in our main method to either Celsius or Fahrenheit. The nearby code should give you clues as to which subclass to use in each case.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h3 id="running-your-java-project">Running your Java Project</h3>
+<ul>
+  <li>At this point all errors should be resolved. If any remain please resolve them before continuing further.</li>
+  <li>
+    <p>Now right click on a blank space in the canvas and select <strong>Run temperatureCon..main()</strong>  or press CTRL+SHIFT+F10.<br />
+<img src="/~cs110x/static/img/lab6/Run.png" alt="image23" /></p>
+  </li>
+  <li>Your code should prompt you to enter in a temperature and a C or F. <br />
+<img src="/~cs110x/static/img/lab6/Input.png" alt="image24" /><br />
+<br />
+   After you insert your input the console will return an error! It should say that there is a
+   NullPointerException. This means that a method is called on an object that was not yet created. 
+   In order to fix this error let's start debuging the code to see where the issue is.</li>
+</ul>
+
+<hr />
+
+<h3 id="in-progress-checkoff"><strong>In Progress Check</strong></h3>
+<ul> 
+  <li>
+      When you reach the error message shown in the picture above, add a ticket to the Autograder 
+      queue with one tag for the priority of your ticket and another with in progress check status.
+      Bring up your lab reserevation time in cse110.com for the staff member to verify. Select your 
+      lab reservartion time correctly otherwise you will earn a professionalism deduction. A member 
+      of the staff will verify that you have successfuly installed IntelliJ DEA, and began the coding
+      process along with your lab reservation time.
+  </li>
+</ul>
+<hr />
+
+<h3 id="debugging-a-java-project">Debugging a Java Project</h3>
+
+<ul>
+  <li>So There is a <code>NullPointerException</code> in your code. To debug this go to roughly line 40 in <code>TemperatureConverter.java</code> (The second switch statement). You can toggle Line number in IntelliJ by right clicking on the left margin of the code block and selecting <strong>Show line numbers</strong>.<br />
+<img src="/~cs110x/static/img/lab6/Line.png" alt="image25" /></li>
+  <li>Now select this line with your cursor and set a break point by selecting <strong>RUN -&gt;Toggle Line Breakpoint</strong>  or pressing CTRL+F. It
+      is also possible to add the breaking point by just left clicking on the left margin. <br />
+<img src="/~cs110x/static/img/lab6/setDot.png" alt="image26" /></li>
+  <li>A red dot should appear next to the line with a breakpoint set.<br />
+<img src="/~cs110x/static/img/lab6/redDot.png" alt="image27" /></li>
+  <li>Right click on the canvas and select<strong> Debug temperaturCon...main()</strong>.<br />
+<img src="/~cs110x/static/img/lab6/Debug.png" alt="image28" /></li>
+  <li>The code will stop at the selected breakpoint and all the variable values can be seen in the bottom right window.</li>
+  <li>You will see a series of tools at the top of the bottom left window. which look like arrows pointing diagonally down and up. Step over F8, Step Into F7, and so forth. Take some time to play with these options with different breakpoints to familiarize yourself with their functions.</li>
+  <li>Run the program with the above breakpoint but this time press Step Over until you reach the line <code>outputTemp = inputTemp.toCelsius();</code> or <code>outputTemp = inputTemp.toFahrenheit()</code>. When you reach one of these lines press Step Into F7.<br />
+    <ul>
+      <li>You will see that the outputTemp is currently set to null.</li>
+      <li>Press StepInto again to follow the program into its function call to toFahrenheit().<br />
+<img src="/~cs110x/static/img/lab6/returnNull.png" alt="image30" /></li>
+    </ul>
+  </li>
+  <li>Now you have found the error using IntelliJ's debugger but before you fix it, let's explore another more robust way to detect errors in your code using IntelliJ.</li>
+</ul>
+
+<hr />
+
+<h2 id="junit-testing">Part 2: JUNIT Testing</h2>
+
+<ul>
+  <li>
+      JUnit is a tool built into IntelliJ that is very efficient for testing. With JUnit you can practice 
+      what is called <em>Test Driven Development</em> (or TDD). TDD is a coding practice where you write
+      the tests for code before you write the code itself. When you write the new test, you want to make 
+      sure that it fails at first, then as you write the code you pass more and more tests, until you pass
+      them all. This helps a lot of programmers determine how the body of an algorithm should look before 
+      they even write it! TDD also helps to make sure that the new code you write does not break your previously
+      written code, because all of those methods will have tests associated with them too. To help get this
+      Temperature program working properly, we are going to provide you with some JUnit tests, which you will 
+      use, and then add to when we expand the functionality of the program.
+ </li>
+  <li>To Begin right click the <strong>src</strong> file in the left window. Select <strong>New -&gt; Package. Name the package </strong> "edu.ucsd.cs110.tests".</li>
+  <li>Next navigate to the Fahrenheit class and select the link containing the <code>public class Fahrenheit extends Temperature {</code> declaration.<strong> Right Click -&gt; Go To -&gt; Test -&gt; Create new Test.</strong>.<br />
+<img src="/~cs110x/static/img/lab6/GoTo.png" alt="image31" /></li>
+  <li>
+    <p>Once clicked select the <strong>Junit 4</strong> option. If a pop up warning appears click <strong>Fix</strong> to the right of it to install Junit 4. Set the Destination package to <code>edu.ucsd.cs110.tests</code>. Once this is done click <strong>OK</strong> to create the Test.<br />
+<img src="/~cs110x/static/img/lab6/Junit4.png" alt="newimage31" /></li>
+<img src="/~cs110x/static/img/lab6/Destination.png" alt="image32" /><br />
+<img src="/~cs110x/static/img/lab6/TestFolder.png" alt="image33" /></p>
+  After the FahernheitTest class is made it might still complain about Junit4 not being in the path, this is an easy fix
+  just hover the red line and like before a red lightbulb would appear and then click the lightbulb and select the option that
+  adds junit4 to the path of this project.(If you cannot figure it out just ask a tutor).
+  </li>
+  <li>Now copy paste the following code into the FahrenheitTest File:</li>
+</ul>
+
+<pre><code>package edu.ucsd.cs110.tests;
+import edu.ucsd.cs110.temperature.Fahrenheit;
+import edu.ucsd.cs110.temperature.Temperature;
+import junit.framework.TestCase;
+
+public class FahrenheitTest extends TestCase{
+    private float delta = 0.001f;
+
+    public void testFahrenheit(){
+        float value = 12.34f;
+        Fahrenheit temp = new Fahrenheit(value);
+
+        assertEquals(value, temp.getValue(), delta);
+    }
+
+    public void testFahrenheitToString(){
+        float value = 12.34f;
+
+        Fahrenheit temp = new Fahrenheit(value);
+        String string = temp.toString();
+
+        String beginning = "" + value;
+        String ending = " F";
+
+        // Verify the suffix of the formatted string
+        assertTrue(string.startsWith(beginning));
+
+        // Verify the prefix of the formatted string
+        assertTrue(string.endsWith(ending));
+
+        // Verify the middle of the formatted string 
+        int endIndex = string.indexOf(ending);
+
+        // (Hint: what is the length of the middle of the string?)
+        assertTrue(string.substring(0, endIndex).equals(beginning));
+    }
+
+    public void testFahrenheitToFahrenheit()
+    {
+        Fahrenheit temp = new Fahrenheit(32);
+
+        Temperature convert = temp.toFahrenheit();
+        assertEquals(32, convert.getValue(), delta);
+    }
+
+    public void testFahrenheitToCelsius(){
+        Fahrenheit temp = new Fahrenheit(32);
+
+        Temperature convert = temp.toCelsius();
+        assertEquals(0, convert.getValue(), delta);
+
+        temp = new Fahrenheit(212);
+        convert = temp.toCelsius();
+
+        assertEquals(100, convert.getValue(), delta);
+    }
+}
+
+</code></pre>
+
+<ul>
+  <li>Repeat the entire process for the Celsius class and copy paste the code below:</li>
+</ul>
+
+<pre><code>package edu.ucsd.cs110.tests;
+
+import edu.ucsd.cs110.temperature.Celsius;
+import edu.ucsd.cs110.temperature.Temperature;
+import junit.framework.TestCase;
+
+public class CelsiusTest extends TestCase{
+    private float delta = 0.001f;
+
+    public void testCelsius(){
+        float value = 12.34f;
+        Celsius temp = new Celsius(value);
+
+        assertEquals(value, temp.getValue(), delta);
+    }
+
+    public void testCelsiusToString(){
+        float value = 12.34f;
+
+        Celsius temp = new Celsius(value);
+        String string = temp.toString();
+
+        String beginning = "" + value;
+        String ending = " C";
+
+        // Verify the suffix of the formatted string
+        assertTrue(string.startsWith(beginning));
+
+        // Verify the prefix of the formatted string
+        assertTrue(string.endsWith(ending));
+
+        // Verify the middle of the formatted string 
+        int endIndex = string.indexOf(ending);
+
+        // (Hint: what is the length of the middle of the string?)
+        assertTrue(string.substring(0, endIndex).equals(beginning));
+    }
+
+    public void testCelsiusToCelsius()
+    {
+        Celsius temp = new Celsius(0);
+        Temperature convert = temp.toCelsius();
+        assertEquals(0, convert.getValue(), delta);
+    }
+
+    public void testCelsiusToFahrenheit(){
+        Celsius temp = new Celsius(0);
+
+        Temperature convert = temp.toFahrenheit();
+        assertEquals(32, convert.getValue(), delta);
+
+        temp = new Celsius(100);
+        convert = temp.toFahrenheit();
+
+        assertEquals(212, convert.getValue(), delta);
+    }
+}
+</code></pre>
+
+<hr />
+
+<ul>
+  <li>Let's examine the code to get a better understanding of how it works. Open up your "CelsiusTests.java" file, there are a few things you should take a look at:
+    <ul>
+      <li>First, note the class inheritance: extends TestCase. TestCase is used to specify a test fixture which holds actual tests.</li>
+      <li>Next, observe that each method begins with test. Prefixing a method with test indicates to the test fixture that the method should be considered a test case.</li>
+      <li>Finally, each test case has one or more assertions. These method calls are used to verify expected results for a variety of types. For example assertTrue takes a boolean argument and verifies that it is true. assertEquals takes two parameters and verifies that one.equals(two) returns true.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>IMPORTANT:</strong> Note the example <code>testCelsiusToFahrenheit()</code>, which calls a three-argument assertEquals method. For floating point comparisons, you should always use this form of <code>assertEquals</code>, which takes a third parameter. (Our temperatures are floating point comparisons).Because precise equality between floating point numbers is not guaranteed, this form of assertEquals relaxes the definition of “equality” by allowing the two values being compared to differ by a small amount. This amount is defined as the variable delta in the above example, which indicates that you want the values to be equal to at least three decimal places.</p>
+
+<ul>
+  <li>
+    <p>Now run CelsiusTest.java (Right click on <strong>CelsiusTest</strong> class and click <strong>Run</strong>) and direct your attention to the lower left window. You should see 1 test passed and 3 tests failed. Double click on the first failed test testCelsiusToFahrenheit. This will take you to the failed test case. It also displays a message as to why the test failed.<br />
+  <img src="/~cs110x/static/img/lab6/failingTest.png" alt="image34" /></p>
+  </li>
+  <li>
+    <p>Now that you know there is something wrong with the convert object. Navigate to that method in the Celsius.java class and see where the error is occurring. Navigate to Fahrenheit and Celsius and implement the methods there such that all the tests pass.<br />
+  <img src="/~cs110x/static/img/lab6/pass.png" alt="image35" /></p>
+  </li>
+  <li>
+    <p>Finally you should do a little reordering in order to simply run all the tests at once. This becomes more important as your project gets more and more complex and it requires an increasingly large test suite.</p>
+  </li>
+  <li>
+    <p>Click on the project in the left hand window and select <strong>NEW -&gt; Directory</strong>.<br />
+  <img src="/~cs110x/static/img/lab6/NewDirectory.png" alt="image36" /></p>
+  </li>
+  <li>Name the directory tests.</li>
+  <li>
+    <p>Now right click on the new directory <strong>tests</strong> select <strong>Mark Directory As -&gt; Test Sources Root</strong>. The test folder should appear green now.<br />
+  <img src="/~cs110x/static/img/lab6/RootTest.png" alt="image37" /></p>
+  </li>
+  <li>
+    <p>Copy paste both the tests you wrote into the tests folder. It should look like the image below when done.<br />
+  <img src="/~cs110x/static/img/lab6/copyTest.png" alt="image38" /></p>
+  </li>
+  <li>Now to run all your tests simply right click the <strong>tests</strong> folder and select <strong>RUN All Tests</strong>. This will quickly run all the tests inside the folder at once.<br />
+  <img src="/~cs110x/static/img/lab6/runAll.png" alt="image39" /><br />
+  <img src="/~cs110x/static/img/lab6/AllPassed.png" alt="image40" /></li>
+  <li>After you successfully complete the code and it passes all the test cases you should move to the third part of the lab: Travis CI.</li>
+</ul>
+<hr />
+<ul><h2>Part 3:  Travis CI </h2>
+  <li><h3>About Travis CI</h3><br />
+      Travis CI is not a testing application itself, rather it serves as an application which helps
+      developers automate whatever build process (which may include testing) that they would
+      normally run when propagating a change from their local workstation to the released
+      production-level codebase. This process is called continuous integration (CI). Examples of
+      build managers for Java include Gradle (which Android Studio uses), Maven, and Ant. Ant is
+      the simplest and the build manager you will use in this lab.
+  </li>
+  <li><h3>Signing up for Travis CI</h3><br />
+      <ul>
+         <li>Visit <a href=https://travis-ci.org/auth>Travis web</a> and click
+             <strong>Sign in with GitHub</strong> to link your GitHub account to
+             Travis CI, this will make it so that you are able to utilize continuous
+             integration on a GitHub repository. 
+             <img src="/~cs110x/static/img/lab6/Travis1.png" alt="image41" />
+             <img src="/~cs110x/static/img/lab6/Travis2.png" alt="image42" />
+         </li>
+         <li><strong>Note:</strong> If you ever want to stop Travis from having access
+              to your GitHub account, simply visit: <a href=https://github.com/settings/applications>
+              Revoker</a> and click on <strong>Revoke</strong>.
+         </li>
+         <li>Now you need to add your newly created repository to Travis CI,
+             do this by clicking the <strong> + </strong> (plus symbol) on the left part of the screen.
+             <img src="/~cs110x/static/img/lab6/Travis3.png" alt="image43" />
+             <strong>Note:</strong> You need to have a GitHub repository for this project, if you do not remember how to do that,
+             refer back to lab2 where you learn to create a new GitHub repository.<br />
+ 
+             After you have a GitHub repository set, find your newly create repository and click the button next to its name to activate this
+             GitHub repository for Travis. This will turn the button green and appear like below.
+             <img src="/~cs110x/static/img/lab6/Travis4.png" alt="image44" />
+         </li>
+         
+      </ul>
+  </li>
+  <li><h3>Placing the necessary files in the project's folder</h3><br />
+     <ul>
+         <li>
+            Use the terminal and change your current directory to be the directory of CSE110 project.
+            Then download the necessary files from the public repository to this directory. 
+            This step requires you to clone a public repository provided for you in GitHub.
+            To do so please follow the steps bellow:
+            <pre>
+              <code>
+cd "To the directory of the project"
+git clone git@github.com:skarimik/Travis.git
+cp -r Travis/ .
+rm -r ./Travis
+                </code>
+            </pre>
+           <strong> Travis file contains five files:<br/>
+            1. lib, 2. .classpath, 3. .travis.yml, 4. README.md, and 5. build.xml. 
+           </strong>
+         </li>
+         <li> 
+            <h3>lib:</h3> These are the library files that Travis will need in order to 
+            build the code and test it.
+         </li>
+         <li> 
+            <h3>.classpath:</h3> The classpath file contains src and target entries that 
+            correspond with folders in the project. 
+         </li>
+         <li> 
+            <h3>.travis.yml:</h3> 
+            This file is a basic Travis configuration file that tells Travis CI how our application
+            should run during the build process and can be configured to use a specific version 
+            of the JDK, or even to use multiple JDK's to test your application for compatibility
+            on many systems. (This file always needs to be in the root directory of your GitHub
+            repository for Travis to function correctly).  
+        </li>
+         <li> 
+            <h3>README.md:</h3> 
+	    This is the file that will contain the result of the process from Travis either 
+            build failed or succeeded.
+        </li>
+         <li> 
+            <h3>build.xml:</h3> 
+            This is an xml file which is part of a simple build system called Ant. This file is
+            essentially the build's instructions or directions which Travis CI eventually runs in the cloud.
+            This file specifies which testing framework to use for tests, which dependencies to load, and
+            what the general flow of execution will be to complete the core build process. 
+        </li>
+         
+     </ul>
+  </li>
+  <li><h3> Embedding Status Image:</h3>
+    <ul>
+      <li><strong>a.</strong>
+        Now you are going to embed a status image (or Build Badge) within the README.md
+        for your GitHub Repository which will show the status of your most recent Travis
+        Build on your GitHub repository. The status image automatically updates whenever
+        you load your GitHub repository main page or README.md (In reality, there can be 
+        up to a 2 minute delay but it is typically much faster). This makes detecting any 
+        push which causes the build to break much simpler to detect. 
+      </li>
+      <li><strong>b.</strong>
+        For example, a Travis CI Build Badge which has passed its most recent build 
+        will look like the image below. 
+        <img src="/~cs110x/static/img/lab6/Travis5.png" alt="image45" />
+      </li>
+      <li><strong>c.</strong>
+        To get the status badge for your Travis CI Repository, navigate to <a href= https://travis-ci.org> Travis CI</a>
+        and click on the Build Badge which is to the right of your title header 
+        (Highlighted in the picture below with red).
+        <img src="/~cs110x/static/img/lab6/Travis6.png" alt="image46" />
+      </li>
+      <li><strong>d.</strong>
+        Select the master branch and Markdown in the dialog box. Then Copy the code given in the Markdown box.
+        <img src="/~cs110x/static/img/lab6/Travis7.png" alt="image7" />
+      </li>
+      <li><strong>e.</strong>
+	Now using Terminal inside the directory of your project run the command below to open the README.md and paste the code that you coppied from last step in this file.
+        <br /><strong>Note:</strong> Make sure that you copy paste correctly.
+        <br />Then save and quit:
+        <pre>
+<code>
+vim README.md
+</code>
+        </pre>
+      </li>
+    </ul>
+  </li>
+  <li><h3>Pushing the changes to GitHub:</h3>
+  <br />
+  In order to push the changes to the GitHub repository, type the following commands in the
+  Terminal:
+     <pre>
+     <code>
+git add .
+git commit -m "message"
+git push origin master
+     </code>
+     </pre>
+  </li>
+  <li><h3>Travis should run and pass:</h3>
+   <br /> Given that the project is correct and debugged, Travis should not fail and it should produce
+          a passing badge which will be placed inside README.md.Note that the process may take a while for the build to start and complete. 
+        <img src="/~cs110x/static/img/lab6/Travis5.png" alt="image8" />
+  </li>
+  <li><h3><strong>Completion Checkoff:</strong></h3>
+   When you your README.md file contains the passing badge, add a ticket to the Autograder queue with 
+   one tag for the priority of your ticket and another with lab completion check tag so a member of 
+   the staff will help you. However bear in mind that you will only get checkoff prioirty during your 
+   own lab reservation time. During any other CSE 110 lab hour your checkoff request will be considered
+   only if there are staff members who are not helping students from that lab hour.
+  </li>
+</ul>
+
+<hr />
+
+      </div>
+    </div>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script type="text/javascript" src="/~cs110x//static/js/script.js"></script>
+  </body>
+</html>
+6�4t��      X�ڈX�ډ=q|�X�ڡ   :    :http://ieng6.ucsd.edu/~cs110x/static/labs/lab6/index.html necko:classified 1 strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Wed, 15 Feb 2017 22:47:40 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Wed, 15 Feb 2017 22:43:22 GMT
+Etag: "776171e-a084-6861f680"
+Accept-Ranges: bytes
+Content-Length: 41092
+Content-Type: text/html
+ original-response-headers Date: Wed, 15 Feb 2017 22:47:40 GMT
+Server: Apache/2.2.3 (CentOS)
+Last-Modified: Wed, 15 Feb 2017 22:43:22 GMT
+Etag: "776171e-a084-6861f680"
+Accept-Ranges: bytes
+Content-Length: 41092
+Connection: close
+Content-Type: text/html
+ uncompressed-len 0 predictor::resource-count 40 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/poole.css 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/syntax.css 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/public/css/lanyon.css 1,1,1487198856,4096 predictor::http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/newProject.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/newJDK.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/chooseDirectory.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/template.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/projectName.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/createField.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Implement.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/add.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Import.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Run.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Input.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Line.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/setDot.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/redDot.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Debug.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/returnNull.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/GoTo.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Junit4.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Destination.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/TestFolder.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/failingTest.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/pass.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/NewDirectory.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/RootTest.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/copyTest.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/runAll.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/AllPassed.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Travis1.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Travis2.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Travis3.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Travis4.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Travis5.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Travis6.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x/static/img/lab6/Travis7.png 1,1,1487198856,4096 predictor::http://ieng6.ucsd.edu/~cs110x//static/js/script.js 1,1,1487198856,4096 predictor::http://fonts.gstatic.com/s/ptserif/v8/03aPdn7fFF3H6ngCgAlQzPk_vArhqVIZ0nv9q090hN8.woff2 1,1,1487198856,4096   ��
